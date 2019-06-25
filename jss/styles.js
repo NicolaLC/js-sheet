@@ -15,10 +15,11 @@ const layoutProps = {
   itemsMargin: "1rem 0"
 }
 
-const headerHeight = "10rem";
+const headerHeight = "75vh";
+const headerBackground = 'url("https://www.toptal.com/designers/subtlepatterns/patterns/white-waves.png")';
 
 const getBodyHeight = () => {
-  return `calc(100% - ${headerHeight})`;
+  return `auto`;
 }
 
 const stylesheets = {
@@ -32,11 +33,11 @@ const stylesheets = {
     "childrens": [
       {
         "selector": ".Header",
-        "color":"white",
+        "color":colors.main,
         "width":"100%",
         "height":headerHeight,
-        "align":"center",
-        "background": "#48dbfb"
+        "align":"center column",
+        "background": headerBackground
       },
       {
         "selector": ".Body",
