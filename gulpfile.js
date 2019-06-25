@@ -1,11 +1,15 @@
 const fs = require("fs");
-const { watch } = require('gulp');
-function sniff(data) {
-	setTimeout(() => {
-		delete require.cache[require.resolve('./jss/styles')]
-		const { stylesheets } = require('./jss/styles');
+const { watch } = require("gulp");
+
+function parse() {
+	delete require.cache[require.resolve("./jss/styles")];
+	const { stylesheets } = require("./jss/styles");
+	try {
 		return parseContent(stylesheets);
-	}, 1000);
+	} catch (e) {
+		console.error(e);
+		return Promise.resolve();
+	}
 }
 
 function parseContent(original) {
@@ -16,29 +20,28 @@ function parseContent(original) {
 
 function parseSniffet(original) {
 	let result = "";
-
-	result = parseObject(original['root']);
-
+	result = parseObject(original["root"]);
 	return result;
 }
 
-function parseObject(root) {
-	let result = '';
-	const {selector} = root;
-	result += parseElement(selector,root);
+function parseObject(root, parentSelector) {
+	let result = "";
+	const { selector } = root;
+	result += parseElement(selector, root, parentSelector);
 	if (root.childrens) {
 		root.childrens.map(child => {
-			result += parseObject( child );
-		})
+			result += parseObject(child, selector);
+		});
 	}
 
 	return result;
 }
 
-function parseElement(selector, properties, parentSelector) {
-	return `${
-		parentSelector ? parentSelector + " " : ""
-	}${selector}{${parseProperties(properties)}}`;
+function parseElement(selector, properties, parentSelector = "") {
+	if (parentSelector && selector.indexOf(":") < 0) {
+		parentSelector += " ";
+	}
+	return `${parentSelector}${selector}{${parseProperties(properties)}}`;
 }
 
 function parseProperties(properties) {
@@ -48,11 +51,16 @@ function parseProperties(properties) {
 			case "align":
 				result += prepareAlign(properties[prop]);
 				break;
-			case 'selector':
-      case "childrens": break;
+			case "content":
+				const content = properties[prop].trim();
+				result +=  `${prop}:${!content ? '" "': content};`;
+				break;
+			case "selector":
+			case "childrens":
+				break;
 			default:
-        result += `${prop}:${properties[prop]};`;
-      break;
+				result += `${prop}:${properties[prop]};`;
+				break;
 		}
 	});
 	return result;
@@ -80,8 +88,8 @@ function prepareAlign(alignment) {
 				properties.push({ "justify-content": "flex-end" });
 				break;
 			case "column":
-					properties.push({ "flex-direction": "column" });
-					break;
+				properties.push({ "flex-direction": "column" });
+				break;
 			default:
 				break;
 		}
@@ -112,16 +120,19 @@ function overrideFile(filename, content) {
 				}
 			});
 		} else {
-			fs.writeFile(filename, content, r => {console.log('JSS updated')});
+			fs.writeFile(filename, content, r => {
+				console.log("JSS updated");
+			});
 		}
 	});
 }
 
 exports.default = function() {
-	const watcher = watch('./**/jss/*.js',{usePolling: true, delay: 5000}).on('change', sniff);
-	watcher.on('change', function(path, stats) {
+	const watcher = watch(["./**/jss/*.js","./**/jss/**/*.js"]);
+	watcher.on("change", function(path, stats) {
 		console.log(`File ${path} was changed`);
+		parse();
 	});
 };
 
-exports.sniff = sniff;
+exports.parse = parse;
