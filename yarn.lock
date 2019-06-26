@@ -968,6 +968,11 @@ faye-websocket@~0.10.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
+figlet@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.2.3.tgz#7d25df546f41fc411c2a8b88012d48d55de72129"
+  integrity sha512-+F5zdvZ66j77b8x2KCPvWUHC0UCKUMWrewxmewgPlagp3wmDpcrHMbyv/ygq/6xoxBPGQA+UJU3SMoBzKoROQQ==
+
 filewatcher@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/filewatcher/-/filewatcher-3.0.1.tgz#f4a1957355ddaf443ccd78a895f3d55e23c8a034"
@@ -1259,6 +1264,11 @@ gulp-cli@^2.2.0:
     semver-greatest-satisfied-range "^1.1.0"
     v8flags "^3.0.1"
     yargs "^7.1.0"
+
+gulp-color@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-color/-/gulp-color-0.0.2.tgz#c75e490fdf87d54b53bb82c91c718135000fc43c"
+  integrity sha512-xT1RrFyQn4Wqp8NYEZjoE3JBPMs4fsxo1RRV+CHsnx0QkCt3ZYfPhSaZRIff5FXSD8IrN9yRY/1WNM6oOAGI4g==
 
 gulp-livereload@^4.0.1:
   version "4.0.1"

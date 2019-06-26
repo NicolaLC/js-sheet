@@ -1,42 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
-  <title>JsonSheet</title>
-  <meta name="description" content="Sniffet Test">
-  <meta name="author" content="nicolacastellanidev@gmail.com">
-  <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dist.css">
-  <style>
-    body, html {
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="utf-8" />
 
-<body>
-  <div class="Header">
-    <h1>Welcome to JSONSheet project!</h1>
-    <div class="Menu">
-      <a href="about.html">About this project</a>
-      <a href="http://nicawd.herokuapp.com" target="_blank">Visit my website</a>
-      <a href="#">Pay me a coffee</a>
-      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">GitHub</a>
+    <title>JsonSheet</title>
+    <meta name="description" content="JSSheet website" />
+    <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
+    <meta name="author" content="nicolacastellanidev@gmail.com" />
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dist.css" />
+  </head>
+
+  <body>
+    <div class="Header">
+      <h1>JSONSheet</h1>
+      <div class="Menu">
+        <a href="http://nicawd.herokuapp.com" target="_blank">Visit my website</a>
+        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">GitHub</a>
+      </div>
+      <img src="assets/images/jssheet.png" alt="JSSheet logo"/>
     </div>
-  </div>
-  <div class="Body">
-    <div class="Title">Create Fast - Reusable css stylesheets!</div>
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-  </div>
-  <script src="/reload/reload.js"></script> 
-</body>
+    <div class="Body">
+      <div class="Title">Create Fast - Reusable css stylesheets!</div>
+      <h3>
+        Preface
+      </h3>
+      <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties might be missing.</p>
+      <p>I'm working alone and I'll add new features in the future like:</p>
+      <ul>
+        <li>Animations</li>
+        <li>Mobile</li>
+        <li>IE Support</li>
+      </ul>
+      <h3>
+        What is?
+      </h3>
+      <p>
+        It's a new way to write css using Javascript!
+      </p>
+      <h3>
+        How does it works?
+      </h3>
+      <p>
+        JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
+        hierarchies using <b>childrens</b>.
+        A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
+      </p>
+      <p>
+        Starting from a <b>styles.js</b> element you can define css properties and
+        childrens:
+      </p>
+      <pre>
+        <code>
+/**
+* ROOT STYLESHEET
+* 
+* @author nicolacastellanidev@gmail.com
+* @desc the root stylesheet, don't rename stylesheets export
+*/
+  
+/// Get shared constants
+const { fonts, colors } = require("./variables");
+/// Get partials
+const { body } = require("./partials/body");
+const { header } = require("./partials/header");
+const { generics } = require("./partials/generics");
+
+/**
+* Core stylesheet
+*/
+const <b>stylesheets</b> = {
+  root: {
+  selector: "body",
+  background: colors.primary,
+  fontFamily: fonts.main,
+  padding: 0,
+  margin: 0,
+  overflowX: "hidden",
+  childrens: [header, body, ...generics]
+  }
+};
+
+module.exports = {
+  stylesheets
+};</code>
+      </pre>
+      <p>
+        <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
+        components:
+      </p>
+      <pre>
+          <code>
+/**
+* HEADER PARTIAL
+* 
+* @author nicolacastellanidev@gmail.com
+* @desc handle .Header partial styles
+*/
+  
+/// get color constants
+const { colors } = require("../variables");
+/// custom partial constants
+const headerHeight = "75vh";
+const headerBackground =
+  'url("myBgUrl")';
+
+/**
+* .Header styling
+*/
+const <b>header</b> = {
+  selector: ".Header",
+  color: colors.primary,
+  width: "100%",
+  height: headerHeight,
+  align: "center column",
+  background: headerBackground
+};
+
+module.exports = {
+  header
+};</code>
+        </pre>
+        <h3>
+          How can I use it?
+        </h3>
+        <p>
+          Download the repository from <a href="https://github.com/NicolaLC/js-sheet" target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
+        </p>
+        <p>From root directory:</p>
+        <ul>
+          <li>run <b>yarn</b> (if yarn is not installed run <b>npm i yarn -g</b>)</li>
+          <li>run <b>yarn watch</b> to start watching edits</li>
+          <li>run <b>yarn server</b> to run the server @ localhost:3000</li>
+        </ul>
+        <p>If everything works fine you should see this page at localhost:3000</p>
+        <p>Now you can start creating your own styles starting from this template!</p>
+    </div>
+    <script src="/reload/reload.js"></script>
+  </body>
+
 </html>

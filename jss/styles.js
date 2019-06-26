@@ -1,10 +1,13 @@
 /**
- * Get useful vars
+ * ROOT STYLESHEET
+ * 
+ * @author nicolacastellanidev@gmail.com
+ * @desc the root stylesheet, don't rename stylesheets export
  */
+
+/// Get shared constants
 const { fonts, colors } = require("./variables");
-/**
- * Get the partials
- */
+/// Get partials
 const { body } = require("./partials/body");
 const { header } = require("./partials/header");
 const { generics } = require("./partials/generics");
@@ -15,11 +18,11 @@ const { generics } = require("./partials/generics");
 const stylesheets = {
 	root: {
 		selector: "body",
-		align: "column",
-		width: "100%",
-		height: "100%",
-		background: colors.main,
-		"font-family": fonts.main,
+		background: colors.primary,
+		fontFamily: fonts.main,
+		padding: 0,
+		margin: 0,
+		overflowX: "hidden",
 		childrens: [header, body, ...generics]
 	}
 };

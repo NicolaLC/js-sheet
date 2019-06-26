@@ -1,12 +1,24 @@
 const fs = require("fs");
 const { watch } = require("gulp");
+const color = require("gulp-color");
+const figlet = require("figlet");
+
+const CONSOLE_PREFIX = "[JSS] ";
 
 function parse() {
-	delete require.cache[require.resolve("./jss/styles")];
-	const { stylesheets } = require("./jss/styles");
+	for (const path in require.cache) {
+		if (path.endsWith(".js")) {
+			// only clear *.js, not *.node
+			delete require.cache[path];
+		}
+	}
 	try {
+		const { stylesheets } = require("./jss/styles");
 		return parseContent(stylesheets);
 	} catch (e) {
+		console.log(
+			color(`${CONSOLE_PREFIX} an error has occured while compiling:`, "RED")
+		);
 		console.error(e);
 		return Promise.resolve();
 	}
@@ -53,7 +65,64 @@ function parseProperties(properties) {
 				break;
 			case "content":
 				const content = properties[prop].trim();
-				result +=  `${prop}:${!content ? '" "': content};`;
+				result += `${prop}:${!content ? '" "' : content};`;
+				break;
+			case "fontFamily":
+				result += `font-family:${properties[prop]};`;
+				break;
+			case "overflowX":
+				result += `overflow-x:${properties[prop]};`;
+				break;
+			case "overflowY":
+				result += `overflow-y:${properties[prop]};`;
+				break;
+			case "fontSize":
+				result += `font-size:${properties[prop]};`;
+				break;
+			case "fontWeight":
+				result += `font-weight:${properties[prop]};`;
+				break;
+			case "fontFamily":
+				result += `font-family:${properties[prop]};`;
+				break;
+			case "zIndex":
+				result += `z-index:${properties[prop]};`;
+				break;
+			case "boxShadow":
+				result += `box-shadow:${properties[prop]};`;
+				break;
+			case "textShadow":
+				result += `text-shadow:${properties[prop]};`;
+				break;
+			case "whiteSpace":
+				result += `white-space:${properties[prop]};`;
+				break;
+			case "borderRadius":
+				result += `border-radius:${properties[prop]};`;
+				break;
+			case "borderBottom":
+				result += `border-bottom:${properties[prop]};`;
+				break;
+			case "borderTop":
+				result += `border-top:${properties[prop]};`;
+				break;
+			case "borderLeft":
+				result += `border-left:${properties[prop]};`;
+				break;
+			case "borderRight":
+				result += `border-right:${properties[prop]};`;
+				break;
+			case "letterSpacing":
+				result += `letter-spacing:${properties[prop]};`;
+				break;
+			case "maxWidth":
+				result += `max-width:${properties[prop]};`;
+				break;
+			case "maxHeight":
+				result += `max-height:${properties[prop]};`;
+				break;
+			case "textAlign":
+				result += `text-align:${properties[prop]};`;
 				break;
 			case "selector":
 			case "childrens":
@@ -121,16 +190,32 @@ function overrideFile(filename, content) {
 			});
 		} else {
 			fs.writeFile(filename, content, r => {
-				console.log("JSS updated");
+				console.log(color(`${CONSOLE_PREFIX}CSS Updated`, "GREEN"));
 			});
 		}
 	});
 }
 
 exports.default = function() {
-	const watcher = watch(["./**/jss/*.js","./**/jss/**/*.js"]);
-	watcher.on("change", function(path, stats) {
-		console.log(`File ${path} was changed`);
+	figlet("JSSheet", function(err, data) {
+		if (err) {
+			console.log("Something went wrong...");
+			console.dir(err);
+			return;
+		}
+		console.log(color(data, "YELLOW"));
+		console.log(
+			color(
+				`  @author: nicolacastellanidev@gmail.com\n  @version: 1.0.0.0\n`,
+				"YELLOW"
+			)
+		);
+
+		const watcher = watch(["./**/jss/*.js", "./**/jss/**/*.js"]);
+		watcher.on("change", function(path, stats) {
+			console.log(color(`${CONSOLE_PREFIX}${path} has changed`, "GREEN"));
+			parse();
+		});
 		parse();
 	});
 };

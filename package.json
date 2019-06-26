@@ -7,8 +7,10 @@
   "dependencies": {
     "easy-livereload": "^1.3.2",
     "express": "^4.17.1",
+    "figlet": "^1.2.3",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
+    "gulp-color": "^0.0.2",
     "gulp-livereload": "^4.0.1",
     "livereload": "^0.8.0",
     "lodash": "^4.17.11",
