@@ -10,7 +10,7 @@ const generics = [
 		fontSize: fonts.sizes.h1,
 		...headersProps,
 		transition: "all .1s ease-out",
-		childrens: [
+		children: [
 			{
 				selector: ":hover",
 				letterSpacing: `.5rem`,
@@ -48,17 +48,18 @@ const generics = [
 		background: colors.dark,
 		color: "white",
 		margin: 0,
+		maxWidth: '95%',
 		padding: layout.itemsPadding,
 		borderRadius: layout.borderRadius,
 		fontFamily: fonts.main,
-		childrens: [
+		children: [
 			{
 				selector: "b",
 				color: colors.secondary
 			},
 			{
 				selector: "code",
-				fontFamily: fonts.main
+				fontFamily: fonts.main,
 			}
 		]
 	},
@@ -66,7 +67,7 @@ const generics = [
 		selector: "ul",
 		padding: 0,
 		margin: 0,
-		childrens: [
+		children: [
 			{
 			selector: "li",
 			padding: 0,

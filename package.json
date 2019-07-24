@@ -13,7 +13,6 @@
     "gulp-color": "^0.0.2",
     "gulp-livereload": "^4.0.1",
     "livereload": "^0.8.0",
-    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "node-dev": "^4.0.0",
     "reload": "^3.0.1",

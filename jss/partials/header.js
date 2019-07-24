@@ -22,7 +22,7 @@ const header = {
 	height: headerHeight,
 	align: "center column",
 	background: headerBackground,
-	childrens: [
+	children: [
 		{
 			selector: "img",
 			width: "5rem",

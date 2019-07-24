@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
 
     <title>JSSheet</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <meta name="description" content="JSSheet website" />
     <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
     <meta name="author" content="nicolacastellanidev@gmail.com" />
@@ -46,12 +47,12 @@
       </h3>
       <p>
         JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
-        hierarchies using <b>childrens</b>.
+        hierarchies using <b>children</b>.
         A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
       </p>
       <p>
         Starting from a <b>styles.js</b> element you can define css properties and
-        childrens:
+        children:
       </p>
       <pre>
         <code>
@@ -80,7 +81,7 @@ const <b>stylesheets</b> = {
   padding: 0,
   margin: 0,
   overflowX: "hidden",
-  childrens: [header, body, ...generics]
+  children: [header, body, ...generics]
   }
 };
 

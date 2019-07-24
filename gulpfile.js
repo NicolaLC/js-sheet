@@ -40,8 +40,8 @@ function parseObject(root, parentSelector) {
 	let result = "";
 	const { selector } = root;
 	result += parseElement(selector, root, parentSelector);
-	if (root.childrens) {
-		root.childrens.map(child => {
+	if (root.children) {
+		root.children.map(child => {
 			result += parseObject(child, selector);
 		});
 	}
@@ -125,7 +125,7 @@ function parseProperties(properties) {
 				result += `text-align:${properties[prop]};`;
 				break;
 			case "selector":
-			case "childrens":
+			case "children":
 				break;
 			default:
 				result += `${prop}:${properties[prop]};`;
