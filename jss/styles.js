@@ -10,6 +10,7 @@ const { fonts, colors } = require("./variables");
 /// Get partials
 const { body } = require("./partials/body");
 const { header } = require("./partials/header");
+const { footer } = require("./partials/footer");
 const { generics } = require("./partials/generics");
 
 /**
@@ -18,14 +19,13 @@ const { generics } = require("./partials/generics");
 const stylesheets = {
 	root: {
 		selector: "body",
-		background: colors.primary,
 		fontFamily: fonts.main,
 		padding: 0,
 		margin: 0,
 		overflowX: "hidden",
 		width: '100%',
 		height: '100%',
-		children: [header, body, ...generics]
+		children: [header, body, footer, ...generics]
 	}
 };
 

@@ -2,59 +2,60 @@
 
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
 
-    <title>JSSheet</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="JSSheet website" />
-    <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
-    <meta name="author" content="nicolacastellanidev@gmail.com" />
-    <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist.css" />
-  </head>
+  <title>JSSheet</title>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="description" content="JSSheet website" />
+  <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
+  <meta name="author" content="nicolacastellanidev@gmail.com" />
+  <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist.css" />
+</head>
 
-  <body>
-    <div class="Header">
-      <h1>JSSheet</h1>
-      <div class="Menu">
-        <a href="http://nicawd.herokuapp.com" target="_blank">Visit my website</a>
-        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">GitHub</a>
-      </div>
-      <img src="assets/images/jssheet.png" alt="JSSheet logo"/>
+<body>
+  <div class="Header">
+    <h1>JSSheet</h1>
+    <div class="Menu">
+      <a href="http://nicawd.herokuapp.com" target="_blank">Visit my website</a>
+      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">GitHub</a>
     </div>
-    <div class="Body">
-      <div class="Title">Create Fast - Reusable css stylesheets!</div>
-      <h3>
-        Preface
-      </h3>
-      <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties might be missing.</p>
-      <p>I'm working alone and I'll add new features in the future like:</p>
-      <ul>
-        <li>Animations</li>
-        <li>Mobile</li>
-        <li>IE Support</li>
-      </ul>
-      <h3>
-        What is?
-      </h3>
-      <p>
-        It's a new way to write css using Javascript!
-      </p>
-      <h3>
-        How does it works?
-      </h3>
-      <p>
-        JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
-        hierarchies using <b>children</b>.
-        A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
-      </p>
-      <p>
-        Starting from a <b>styles.js</b> element you can define css properties and
-        children:
-      </p>
-      <pre>
+    <img src="assets/images/jssheet.png" alt="JSSheet logo" />
+  </div>
+  <div class="Body">
+    <div class="Title">Create Fast - Reusable css stylesheets!</div>
+    <h3>
+      Preface
+    </h3>
+    <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties might
+      be missing.</p>
+    <p>I'm working alone and I'll add new features in the future like:</p>
+    <ul>
+      <li>Animations</li>
+      <li>Mobile</li>
+      <li>IE Support</li>
+    </ul>
+    <h3>
+      What is?
+    </h3>
+    <p>
+      It's a new way to write css using Javascript!
+    </p>
+    <h3>
+      How does it works?
+    </h3>
+    <p>
+      JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
+      hierarchies using <b>children</b>.
+      A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
+    </p>
+    <p>
+      Starting from a <b>styles.js</b> element you can define css properties and
+      children:
+    </p>
+    <pre>
         <code>
 /**
 * ROOT STYLESHEET
@@ -89,11 +90,11 @@ module.exports = {
   stylesheets
 };</code>
       </pre>
-      <p>
-        <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
-        components:
-      </p>
-      <pre>
+    <p>
+      <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
+      components:
+    </p>
+    <pre>
           <code>
 /**
 * HEADER PARTIAL
@@ -125,22 +126,43 @@ module.exports = {
   header
 };</code>
         </pre>
-        <h3>
-          How can I use it?
-        </h3>
-        <p>
-          Download the repository from <a href="https://github.com/NicolaLC/js-sheet" target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
-        </p>
-        <p>From root directory:</p>
-        <ul>
-          <li>run <b>yarn</b> (if yarn is not installed run <b>npm i yarn -g</b>)</li>
-          <li>run <b>yarn watch</b> to start watching edits</li>
-          <li>run <b>yarn server</b> to run the server @ localhost:3000</li>
-        </ul>
-        <p>If everything works fine you should see this page at localhost:3000</p>
-        <p>Now you can start creating your own styles starting from this template!</p>
+    <h3>
+      How can I use it?
+    </h3>
+    <p>
+      Download the repository from <a href="https://github.com/NicolaLC/js-sheet"
+        target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
+    </p>
+    <p>From root directory:</p>
+    <ul>
+      <li>run <b>yarn</b> (if yarn is not installed run <b>npm i yarn -g</b>)</li>
+      <li>run <b>yarn watch</b> to start watching edits</li>
+      <li>run <b>yarn server</b> to run the server @ localhost:3000</li>
+    </ul>
+    <p>If everything works fine you should see this page at localhost:3000</p>
+    <p>Now you can start creating your own styles starting from this template!</p>
+  </div>
+  <div class="Footer">
+    <div class="FooterElement">
+      <h3>Nicola Castellani</h3>
+      <h4>About me</h4>
+      <p>
+        I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
+        latests techniques in web development.
+
+        My work method is really simple: prototype more, work less.
+
+        If you need a job in a short time, I'm not the right person for you. Personally I think than also the simplest
+        project in the world needs its time, because it needs study, prototype and tests.
+
+        In my free time I love to study, try and learn new technologies, or simply improve my skills.
+        Obiviously I'm also an human so I love to walk around the incredible mountains and places near my city, play
+        fusball or just chill out with my (three) kittens.
+
+      </p>
     </div>
-    <script src="/reload/reload.js"></script>
-  </body>
+  </div>
+  <script src="/reload/reload.js"></script>
+</body>
 
 </html>

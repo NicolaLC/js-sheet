@@ -9,7 +9,7 @@ const fonts = {
 	main: "'B612 Mono', monospace",
 	secondary: "'Rubik', sans-serif",
 	sizes: {
-		h1: "8rem",
+		h1: "10vw",
 		h2: "2rem",
 		h3: "1.5rem",
 		p: "1rem"

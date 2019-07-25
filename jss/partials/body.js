@@ -6,6 +6,7 @@ const body = {
 	align: "center column",
 	padding: "2rem",
 	position: "relative",
+	backgroundColor: colors.primary,
 	children: [
 		{
 			selector: ".Title",
@@ -26,6 +27,19 @@ const body = {
 			left: "0",
 			zIndex: "0",
 			"box-shadow": `0px -10px 0 0 ${colors.tertiary}`
+		},
+		{
+			selector: ":after",
+			content: " ",
+			height: "3rem",
+			transform: "rotate(1.5deg)",
+			width: "101%",
+			background: colors.primary,
+			position: "absolute",
+			bottom: "-1rem",
+			left: "0",
+			zIndex: "0",
+			"box-shadow": `0px 10px 0 0 ${colors.tertiary}`
 		},
 		{
 			selector:"p",

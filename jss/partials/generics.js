@@ -7,6 +7,8 @@ const headersProps = {
 const generics = [
 	{
 		selector: "h1",
+		display: 'block',
+		whiteSpace: 'pre-wrap',
 		fontSize: fonts.sizes.h1,
 		...headersProps,
 		transition: "all .1s ease-out",
@@ -60,6 +62,8 @@ const generics = [
 			{
 				selector: "code",
 				fontFamily: fonts.main,
+				display: 'block',
+				whiteSpace: 'pre-wrap'
 			}
 		]
 	},

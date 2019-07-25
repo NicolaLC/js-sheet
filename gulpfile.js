@@ -124,6 +124,18 @@ function parseProperties(properties) {
 			case "textAlign":
 				result += `text-align:${properties[prop]};`;
 				break;
+			case "backgroundColor":
+				result += `background-color:${properties[prop]};`;
+				break;
+			case "gridTemplate":
+				const {columns, rows} = properties[prop];
+				if (columns) {
+					result += `grid-template-columns:${columns};`;
+				}
+				if (rows) {
+					result += `grid-template-rows:${rows};`;
+				}
+			break;
 			case "selector":
 			case "children":
 				break;
