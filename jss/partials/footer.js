@@ -29,7 +29,7 @@ const footer = {
 			selector: '.FooterElement',
 			align: "top column",
 			width: footerElementCalculatedSize,
-			height: footerElementCalculatedSize,	
+			height: footerElementCalculatedSize,
 			padding: layout.itemsPaddingBig
 		}
 	]

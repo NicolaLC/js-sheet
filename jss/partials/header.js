@@ -22,14 +22,19 @@ const header = {
 	height: headerHeight,
 	align: "center column",
 	background: headerBackground,
-	animation: 'fadeIn 1s ease-out',
+	animation: 'fadeIn 2s ease-out',
 	children: [
 		{
 			selector: "img",
 			width: "5rem",
 			height: "auto",
 			margin: layout.itemsMargin,
-			borderRadius: layout.borderRadius
+			borderRadius: layout.borderRadius,
+			children: [{
+				selector: ':hover',
+				animation: 'vibrate 0.3s linear infinite both',
+				cursor: 'pointer'
+			}]
 		}
 	]
 };
