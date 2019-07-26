@@ -53,7 +53,7 @@ function parseElement(selector, properties, parentSelector = "") {
 	if (parentSelector && selector.indexOf(":") < 0) {
 		parentSelector += " ";
 	}
-	return `${parentSelector}${selector}{${parseProperties(properties)}}`;
+	return `${properties.selector.indexOf('keyframes') < 0 ? parentSelector: ''}${selector}{${parseProperties(properties)}}`;
 }
 
 function parseProperties(properties) {
@@ -142,6 +142,9 @@ function parseProperties(properties) {
 			case "selector":
 			case "children":
 				break;
+			case "animationSteps":
+				result += parseAnimationSteps(properties[prop]);
+				break;
 			default:
 				result += `${prop}:${properties[prop]};`;
 				break;
@@ -180,6 +183,14 @@ function prepareAlign(alignment) {
 	});
 	result += getPropsStringNoDuplicates(properties);
 	return result;
+}
+
+function parseAnimationSteps(animationSteps) {
+	let res = '';
+	for (let step in animationSteps) {
+		res += `${step}%{${parseProperties(animationSteps[step])}}`;
+	}
+	return res;
 }
 
 function getPropsStringNoDuplicates(properties) {

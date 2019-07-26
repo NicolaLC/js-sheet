@@ -22,6 +22,7 @@ const header = {
 	height: headerHeight,
 	align: "center column",
 	background: headerBackground,
+	animation: 'fadeIn 1s ease-out',
 	children: [
 		{
 			selector: "img",
