@@ -136,6 +136,9 @@ function parseProperties(properties) {
 					result += `grid-template-rows:${rows};`;
 				}
 			break;
+			case "textDecoration": 
+				result += `text-decoration:${properties[prop]};`;
+				break;
 			case "selector":
 			case "children":
 				break;

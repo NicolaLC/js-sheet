@@ -78,6 +78,11 @@ const generics = [
 			margin: 0
 			}
 		]
+	},
+	{
+		selector: 'a',
+		color: colors.secondary,
+		textDecoration: 'none'
 	}
 ];
 

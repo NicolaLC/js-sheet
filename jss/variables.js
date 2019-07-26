@@ -28,6 +28,7 @@ const colors = {
 const layout = {
 	itemsMargin: "1rem 0",
 	itemsPadding: "1rem",
+	itemsPaddingBig: "5rem",
 	borderRadius: ".5rem"
 };
 
