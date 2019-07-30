@@ -23,29 +23,46 @@ const menu = {
 			selector: '.MenuIcon',
 			width: '2rem',
 			height: '2rem',
-			background: 'url(assets/images/menu.svg) transparent no-repeat',
-			"background-size": "100%",
+			background: 'url(assets/images/menu.svg) white no-repeat',
+			"background-size": "75%",
 			"background-position": "center",
 			cursor: 'pointer',
+			borderRadius: '8px',
 			transition: 'transform .2s ease-out',
+			children: [
+				{
+					selector: ':hover',
+					transform: 'rotate(45deg)',
+				}
+			]
 		},
 		{
 			selector: '.MenuWrapper',
+			display: 'none',
 			position: 'fixed',
-			top: '1rem',
-			left: '5rem',
+			top: '1.1rem',
+			left: '4rem',
 			width: '15rem',
-			height: '20rem',
-			background: colors.secondary
-		},
-		{
-			selector: ':hover',
 			children: [
 				{
-					selector: '.MenuIcon',
-					transform: 'rotate(45deg)'
+					selector: '.MenuItem',
+					margin: '0 1rem 0 0',
+					cursor: 'pointer',
+					transition: 'color .25s ease-out',
+					background: colors.secondary,
+					padding: '.25rem',
+					children: [
+						{
+							selector: ':hover',
+							color: colors.primary
+						}
+					]
 				}
 			]
+		},
+		{
+			selector: '.MenuWrapper.Opened',
+			align: 'left center row'
 		}
 	]
 };

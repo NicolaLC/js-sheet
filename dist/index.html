@@ -20,9 +20,16 @@
     <h1>JSSheet</h1>
     <img src="assets/images/jssheet.png" alt="JSSheet logo" />
   </div>
-  <div class="Menu">
+  <div class="Menu" onclick="toggleMenu()">
     <div class="MenuIcon"></div>
-    <div class="MenuWrapper"></div>
+    <div class="MenuWrapper">
+      <div class="MenuItem">
+        Docs
+      </div>
+      <div class="MenuItem">
+        GitHub
+      </div>
+    </div>
   </div>
   <div class="Body">
     <div class="Title">Create Fast - Reusable css stylesheets!</div>
@@ -185,6 +192,11 @@ module.exports = {
     </div>
   </div>
   <script src="/reload/reload.js"></script>
+  <script>
+  const toggleMenu = () => {
+    document.querySelector('.MenuWrapper').classList.toggle('Opened');
+  }
+  </script>
 </body>
 
 </html>
