@@ -12,7 +12,8 @@ const fonts = {
 		h1: "10vw",
 		h2: "2rem",
 		h3: "1.5rem",
-		p: "1rem"
+		p: "1rem",
+		small: '.75rem'
 	}
 };
 
@@ -29,7 +30,12 @@ const layout = {
 	itemsMargin: "1rem 0",
 	itemsPadding: "1rem",
 	itemsPaddingBig: "5rem",
-	borderRadius: ".5rem"
+	borderRadius: ".5rem",
+	mediaQueries: {
+		mobile: 'only screen and (max-width: 700px)',
+		tablet: 'only screen and (min-width: 701px) and (max-width: 1200px)',
+		desktop: 'only 	screen and (min-width: 1201px)'
+	}
 };
 
 module.exports = {

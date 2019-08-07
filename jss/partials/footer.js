@@ -10,7 +10,7 @@ const { colors, layout } = require("../variables");
 /// custom partial constants
 const footerHeight = "75vh";
 /// utilities
-const footerElementCalculatedSize = `calc(100% - ${layout.itemsPaddingBig}*2)`;
+const footerElementCalculatedSize = (padding) => `calc(100% - ${padding}*2)`;
 
 /**
  * .Footer styling
@@ -28,9 +28,17 @@ const footer = {
 		{
 			selector: '.FooterElement',
 			align: "top column",
-			width: footerElementCalculatedSize,
-			height: footerElementCalculatedSize,
-			padding: layout.itemsPaddingBig
+			width: footerElementCalculatedSize(layout.itemsPaddingBig),
+			height: footerElementCalculatedSize(layout.itemsPaddingBig),
+			padding: layout.itemsPaddingBig,
+			mediaQueries: [
+				{
+					selector: layout.mediaQueries.mobile,
+					padding: layout.itemsPadding,
+					width: footerElementCalculatedSize(layout.itemsPadding),
+					height: footerElementCalculatedSize(layout.itemsPadding),
+				}
+			]
 		}
 	]
 };

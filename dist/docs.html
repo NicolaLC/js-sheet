@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
 
-  <title>JSSheet</title>
+  <title>JSSheet Documentation</title>
   <meta name="viewport" content="initial-scale=1.0, width=device-width">
   <meta name="description" content="JSSheet website" />
   <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
@@ -18,16 +18,16 @@
 <body>
   <!-- HEADER -->
   <div class="Header">
-    <h1>JSSheet</h1>
+    <h2>Documentation</h2>
     <img src="assets/images/jssheet.png" alt="JSSheet logo" />
   </div>
   <!-- MENU -->
   <div class="Menu" onclick="toggleMenu()">
     <div class="MenuIcon"></div>
     <div class="MenuWrapper">
-      <a href="docs.html">
+      <a href="index.html">
         <div class="MenuItem">
-          Docs
+          Home
         </div>
       </a>
       <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
@@ -39,122 +39,7 @@
   </div>
   <!-- BODY -->
   <div class="Body">
-    <div class="Title">Create Fast - Reusable css stylesheets!</div>
-    <h3>
-      Preface
-    </h3>
-    <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties might
-      be missing.</p>
-    <p>I'm working alone and I'll add new features in the future like:</p>
-    <ul>
-      <li>Typescript Support</li>
-      <li>Documentation</li>
-      <li>IE Support</li>
-    </ul>
-    <h3>
-      What is?
-    </h3>
-    <p>
-      It's a new way to write css using Javascript!
-    </p>
-    <h3>
-      How does it works?
-    </h3>
-    <p>
-      JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
-      hierarchies using <b>children</b>.
-      A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
-    </p>
-    <p>
-      Starting from a <b>styles.js</b> element you can define css properties and
-      children:
-    </p>
-    <pre>
-        <code>
-/**
-* ROOT STYLESHEET
-* 
-* @author nicolacastellanidev@gmail.com
-* @desc the root stylesheet, don't rename stylesheets export
-*/
-  
-/// Get shared constants
-const { fonts, colors } = require("./variables");
-/// Get partials
-const { body } = require("./partials/body");
-const { header } = require("./partials/header");
-const { generics } = require("./partials/generics");
-
-/**
-* Core stylesheet
-*/
-const <b>stylesheets</b> = {
-  root: {
-  selector: "body",
-  background: colors.primary,
-  fontFamily: fonts.main,
-  padding: 0,
-  margin: 0,
-  overflowX: "hidden",
-  children: [header, body, ...generics]
-  }
-};
-
-module.exports = {
-  stylesheets
-};</code>
-      </pre>
-    <p>
-      <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
-      components:
-    </p>
-    <pre>
-          <code>
-/**
-* HEADER PARTIAL
-* 
-* @author nicolacastellanidev@gmail.com
-* @desc handle .Header partial styles
-*/
-  
-/// get color constants
-const { colors } = require("../variables");
-/// custom partial constants
-const headerHeight = "75vh";
-const headerBackground =
-  'url("myBgUrl")';
-
-/**
-* .Header styling
-*/
-const <b>header</b> = {
-  selector: ".Header",
-  color: colors.primary,
-  width: "100%",
-  height: headerHeight,
-  align: "center column",
-  background: headerBackground
-};
-
-module.exports = {
-  header
-};</code>
-        </pre>
-    <h3>
-      How can I use it?
-    </h3>
-    <p>
-      Download the repository from <a href="https://github.com/NicolaLC/js-sheet"
-        target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
-    </p>
-    <p>From root directory:</p>
-    <ul>
-      <li>run <b>yarn</b> (if yarn is not installed run <b>npm i yarn -g</b>)</li>
-      <li>run <b>yarn watch</b> to start watching edits</li>
-      <li>run <b>yarn server</b> to run the server @ localhost:3000</li>
-    </ul>
-    <p>If everything works fine you should see this page at localhost:3000</p>
-    <p>Now you can start creating your own styles starting from this template!</p>
+    <div class="Title">This page is under construction</div>
   </div>
   <!-- FOOTER -->
   <div class="Footer">
