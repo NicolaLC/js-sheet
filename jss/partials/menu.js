@@ -45,6 +45,10 @@ const menu = {
 			width: '15rem',
 			children: [
 				{
+					selector: 'a',
+					color: '#4a4a4a'
+				},
+				{
 					selector: '.MenuItem',
 					margin: '0 1rem 0 0',
 					cursor: 'pointer',

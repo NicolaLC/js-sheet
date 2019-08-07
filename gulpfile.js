@@ -2,8 +2,8 @@ const fs = require("fs");
 const { watch } = require("gulp");
 const color = require("gulp-color");
 const figlet = require("figlet");
-
 const CONSOLE_PREFIX = "[JSS] ";
+let MEDIA_QUERIES = '';
 
 function parse() {
 	for (const path in require.cache) {
@@ -33,6 +33,10 @@ function parseContent(original) {
 function parseSniffet(original) {
 	let result = "";
 	result = parseObject(original["root"]);
+	if (MEDIA_QUERIES !== '') {
+		result += MEDIA_QUERIES;
+	}
+	MEDIA_QUERIES = '';
 	return result;
 }
 
@@ -45,7 +49,6 @@ function parseObject(root, parentSelector) {
 			result += parseObject(child, selector);
 		});
 	}
-
 	return result;
 }
 
@@ -53,10 +56,10 @@ function parseElement(selector, properties, parentSelector = "") {
 	if (parentSelector && selector.indexOf(":") < 0) {
 		parentSelector += " ";
 	}
-	return `${properties.selector.indexOf('keyframes') < 0 ? parentSelector: ''}${selector}{${parseProperties(properties)}}`;
+	return `${properties.selector.indexOf('keyframes') < 0 ? parentSelector : ''}${selector}{${parseProperties(properties, selector, parentSelector)}}`;
 }
 
-function parseProperties(properties) {
+function parseProperties(properties, selector, parentSelector) {
 	let result = "";
 	Object.keys(properties).map(prop => {
 		switch (prop) {
@@ -124,19 +127,22 @@ function parseProperties(properties) {
 			case "textAlign":
 				result += `text-align:${properties[prop]};`;
 				break;
+			case "textTransform":
+				result += `text-transform:${properties[prop]};`;
+				break;
 			case "backgroundColor":
 				result += `background-color:${properties[prop]};`;
 				break;
 			case "gridTemplate":
-				const {columns, rows} = properties[prop];
+				const { columns, rows } = properties[prop];
 				if (columns) {
 					result += `grid-template-columns:${columns};`;
 				}
 				if (rows) {
 					result += `grid-template-rows:${rows};`;
 				}
-			break;
-			case "textDecoration": 
+				break;
+			case "textDecoration":
 				result += `text-decoration:${properties[prop]};`;
 				break;
 			case "selector":
@@ -145,11 +151,26 @@ function parseProperties(properties) {
 			case "animationSteps":
 				result += parseAnimationSteps(properties[prop]);
 				break;
+			case "mediaQueries":
+				MEDIA_QUERIES += parseMediaQueries(properties[prop], selector, parentSelector);
+				break;
 			default:
 				result += `${prop}:${properties[prop]};`;
 				break;
 		}
 	});
+	return result;
+}
+
+function parseMediaQueries(properties, elementSelector, parentSelector) {
+	let result = '';
+	properties.map(
+		propertiesMap => {
+			const { selector } = propertiesMap;
+			delete propertiesMap.selector;
+			result += `@media ${selector}{${parentSelector}${elementSelector}{${parseProperties(propertiesMap)}}}`;
+		}
+	);
 	return result;
 }
 
@@ -207,9 +228,9 @@ function getPropsStringNoDuplicates(properties) {
 }
 
 function overrideFile(filename, content) {
-	fs.open(filename, "r", function(err, fd) {
+	fs.open(filename, "r", function (err, fd) {
 		if (err) {
-			fs.writeFile(filename, content || "", function(err) {
+			fs.writeFile(filename, content || "", function (err) {
 				if (err) {
 					console.log(err);
 				}
@@ -222,8 +243,8 @@ function overrideFile(filename, content) {
 	});
 }
 
-exports.default = function() {
-	figlet("JSSheet", function(err, data) {
+exports.default = function () {
+	figlet("JSSheet", function (err, data) {
 		if (err) {
 			console.log("Something went wrong...");
 			console.dir(err);
@@ -238,7 +259,7 @@ exports.default = function() {
 		);
 
 		const watcher = watch(["./**/jss/*.js", "./**/jss/**/*.js"]);
-		watcher.on("change", function(path, stats) {
+		watcher.on("change", function (path, stats) {
 			console.log(color(`${CONSOLE_PREFIX}${path} has changed`, "GREEN"));
 			parse();
 		});

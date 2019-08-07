@@ -1,4 +1,4 @@
-const { fonts, colors } = require("../variables");
+const { fonts, colors, layout } = require("../variables");
 const body = {
 	selector: ".Body",
 	color: "white",
@@ -10,9 +10,11 @@ const body = {
 	children: [
 		{
 			selector: ".Title",
-		  	fontSize: "3rem",
+			width: '100%',
+			fontSize: "3rem",
 			fontWeight: "bold",
 			fontFamily: fonts.secondary,
+			textAlign: 'center',
 			zIndex: "1001"
 		},
 		{
@@ -42,12 +44,18 @@ const body = {
 			"box-shadow": `0px 10px 0 0 ${colors.tertiary}`
 		},
 		{
-			selector:"p",
+			selector: "p",
 			maxWidth: "75vw",
-			textAlign: "center"
+			textAlign: "center",
+			mediaQueries: [
+				{
+					selector: layout.mediaQueries.mobile,
+					maxWidth: '95vw'
+				}
+			]
 		},
 		{
-			selector:"a",
+			selector: "a",
 			color: colors.tertiary
 		}
 	]
