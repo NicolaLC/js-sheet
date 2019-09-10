@@ -57,11 +57,46 @@
             Hello JSSheet!
           </a>
         </li>
+        <li class="MenuTitle">Layout definitions</li>
+        <li>
+          <a href="#">
+            [TODO] The styles.js file
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            [TODO] Partials
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            [TODO] Shared variables and methods
+          </a>
+        </li>
+        <li class="MenuTitle">Shortcuts</li>
+        <li>
+          <a href="#">
+            [TODO] The align property
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            [TODO] The gridTemplate property
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            [TODO] camelCased properties
+          </a>
+        </li>
+        <li class="MenuTitle">Media Queries</li>
+        <li class="MenuTitle">Animations</li>
+        <li class="MenuTitle">Parse extensions and customizations</li>
       </ul>
     </div>
     <div class="DocumentationContent">
       <div class="DocumentationPart" id="about-jss">
-        <h3>What is JSSheet</h3>
+        <h2>What is JSSheet</h2>
         <span><b>JSSheet</b> is a new way to create stylesheets for your websites, it uses <b>JavaScript</b> to create
           minified
           <b>CSS</b> files.</span>
@@ -71,7 +106,7 @@
           handle complex <b>flexbox</b> and <b>css grids</b> layouts</span>
       </div>
       <div class="DocumentationPart" id="how-does">
-        <h3>How does it works</h3>
+        <h2>How does it works</h2>
         <span>The logic behind is pretty simple, we define a main <i>.js</i> file called <b>styles.js</b>, wich exports
           a <i>stylesheets</i> object: </span>
         <code>
@@ -114,14 +149,20 @@ module.exports = {
         </span>
       </div>
       <div class="DocumentationPart" id="hello-world-tutorial">
-        <h3>Hello JSSheet!</h3>
+        <h2>Hello JSSheet!</h2>
         <img src="./assets/images/docs/01.PNG" loading="lazy" alt="js-sheet hello world tutorial" />
-        <hr>
         <span>This is a simple introductive tutorial to start with JSSheet, you will see <i>how to install the
             dependencies</i>
           and <i>start the parser.</i></span>
         <hr>
-        <h5>Step 1. clone the repository and install dependencies</h5>
+        <h3>Step 0. prerequisites</h3>
+        <span>
+          You need to install <a href="https://nodejs.org/it/" target="_blank">NodeJS</a> and <a
+            href="https://gulpjs.com/" target="_blank">Gulp</a> to use JSSheet,
+          <a href="https://yarnpkg.com/lang/en/" target="_blank">yarn</a> is optional, but suggested as default package
+          manager.
+        </span>
+        <h3>Step 1. clone the repository and install dependencies</h3>
         <span>Clone the repository:</span>
         <code><pre><span class="fc-tertiary">git clone</span> <span class="fc-secondary">https://github.com/NicolaLC/js-sheet.git</span></pre></code>
         <span>Navigate to the hello-world tutorial:</span>
@@ -141,7 +182,7 @@ module.exports = {
   <!-- FOOTER -->
   <div class="Footer">
     <div class="FooterElement">
-      <h3>Nicola Castellani</h3>
+      <h2>Nicola Castellani</h2>
       <h4>About me</h4>
       <p>
         I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
@@ -158,7 +199,7 @@ module.exports = {
       </p>
     </div>
     <div class="FooterElement">
-      <h3>My links</h3>
+      <h2>My links</h2>
       <h4>Add me on socials or visit my websites</h4>
       <a href="https://www.linkedin.com/in/nicola-castellani-313b9084/" target="_blank">
         LinkedIn
@@ -174,7 +215,7 @@ module.exports = {
       </a>
     </div>
     <div class="FooterElement">
-      <h3>JSSheet</h3>
+      <h2>JSSheet</h2>
       <h4>Created by my passion for css and javascript</h4>
       <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
         GitHub

@@ -27,7 +27,7 @@ const documentation = {
 							selector: '.MenuTitle',
 							opacity: .5,
 							fontSize: fonts.sizes.small,
-							margin: '0 0 1rem 0',
+							margin: '1rem 0',
 							children: [
 								{
 									selector: ':before',
