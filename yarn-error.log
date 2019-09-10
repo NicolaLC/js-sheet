@@ -14,13 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\WORK\GIT\sniffet\node_modules\cli-color\test'
+  Error: EPERM: operation not permitted, unlink 'C:\WORK\GIT\jssheet\node_modules\cli-color\test'
 
 npm manifest: 
   {
-    "name": "sniffet",
+    "name": "jssheet",
     "version": "1.0.0",
-    "description": ".sniffet parser",
+    "description": ".jssheet parser",
     "main": "index.js",
     "license": "MIT",
     "dependencies": {

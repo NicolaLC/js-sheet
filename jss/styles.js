@@ -16,6 +16,9 @@ const { generics } = require("./partials/generics");
 const { animations } = require("./partials/animations");
 const { mqHelpers } = require("./partials/mq-helpers");
 
+/// page related
+const { documentation } = require("./partials/documentation");
+
 
 /**
  * Core stylesheet
@@ -36,7 +39,8 @@ const stylesheets = {
 			menu,
 			...generics,
 			...animations,
-			mqHelpers
+			mqHelpers,
+			documentation
 		]
 	}
 };

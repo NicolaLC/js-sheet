@@ -73,9 +73,9 @@ const generics = [
 		margin: 0,
 		children: [
 			{
-			selector: "li",
-			padding: 0,
-			margin: 0
+				selector: "li",
+				padding: 0,
+				margin: 0
 			}
 		]
 	},
@@ -83,6 +83,23 @@ const generics = [
 		selector: 'a',
 		color: colors.secondary,
 		textDecoration: 'none'
+	},
+	{
+		selector: 'i, b',
+		fontWeight: 'bold',
+		color: colors.secondary
+	},
+	{
+		selector: '.fc-secondary',
+		color: colors.secondary
+	},
+	{
+		selector: '.fc-tertiary',
+		color: colors.tertiary
+	},
+	{
+		selector: '.f-small',
+		fontSize: fonts.sizes.small
 	}
 ];
 
