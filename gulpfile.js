@@ -56,6 +56,11 @@ function parseElement(selector, properties, parentSelector = "") {
 	if (parentSelector && selector.indexOf(":") < 0) {
 		parentSelector += " ";
 	}
+
+	if (selector.indexOf('&.') > -1) {
+		parentSelector = parentSelector.trim();
+		selector = selector.replace('&', '');
+	}
 	return `${properties.selector.indexOf('keyframes') < 0 ? parentSelector : ''}${selector}{${parseProperties(properties, selector, parentSelector)}}`;
 }
 

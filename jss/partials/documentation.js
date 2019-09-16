@@ -3,6 +3,7 @@ const documentation = {
 	selector: ".Documentation",
 	align: "top left row",
 	padding: "5rem 2rem",
+	transition: 'all .25s ease-out',
 	children: [
 		{
 			selector: ".DocumentationMenu",
@@ -87,6 +88,13 @@ const documentation = {
 					background: colors.secondary
 				}
 			]
+		},
+		{
+			selector: '&.Focus',
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			height: '100%'
 		}
 	]
 };
