@@ -64,7 +64,11 @@ const generics = [
 				selector: "code",
 				fontFamily: fonts.main,
 				display: 'block',
-				whiteSpace: 'pre-wrap'
+				whiteSpace: 'pre-wrap',
+			},
+			{
+				selector: "& + pre",
+				margin: '1rem 0 0 0'
 			}
 		]
 	},

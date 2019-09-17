@@ -53,6 +53,11 @@
             </a>
           </li>
           <li>
+            <a href="#why">
+              🤔 Why should I use it
+            </a>
+          </li>
+          <li>
             <a href="#hello-world-tutorial">
               👋 Hello JSSheet!
             </a>
@@ -64,13 +69,13 @@
             </a>
           </li>
           <li>
-            <a href="partials">
+            <a href="#partials">
               💔 Partials
             </a>
           </li>
           <li>
-            <a href="#">
-              [TODO] Shared variables and methods
+            <a href="#variables">
+              🤝 Shared variables and methods
             </a>
           </li>
           <li class="MenuTitle">Shortcuts</li>
@@ -148,6 +153,32 @@ module.exports = {
             point for JSSheet.
           </span>
         </div>
+        <div class="DocumentationPart" id="why">
+          <h2>JSSheet advantages</h2>
+          <span>⚠️<b>NOTE</b> this is a prototype project and still a WIP - consider to test it before using in
+            production!</span><br>
+          <h3>JSSheets PROS</h3>
+          <ol>
+            <li>
+              <i>Unique</i> styling and logic <i>language</i>
+            </li>
+            <li>
+              <i>Simple-to-recycle</i> variables and methods
+            </li>
+            <li>
+              Vertical and Horizontal <i>alignment shortcuts</i>!
+            </li>
+            <li>
+              Style <i>documentation</i> with <b>js-docs</b> syntax (or custom)
+            </li>
+            <li>
+              Better <i>code completition</i> with custom or built in Javascript IDE plugin
+            </li>
+            <li>
+              Custom css shortcuts creations by <b>gulpfile</b> custom edits
+            </li>
+          </ol>
+        </div>
         <div class="DocumentationPart" id="hello-world-tutorial">
           <h2>Hello JSSheet!</h2>
           <img src="./assets/images/docs/01.PNG" loading="lazy" alt="js-sheet hello world tutorial" /><br>
@@ -181,7 +212,7 @@ module.exports = {
         </div>
         <div class="DocumentationPart" id="styles-js">
           <h2>The main <b>styles.js</b> file</h2>
-          <span>The project has a <b>jss</b> core folder, in there we can define our JSS styles starting from the
+          <span>The project has a <b>jss</b> core folder, in there we can define your JSS styles starting from the
             <b>styles.js</b> core file.</span>
           <span>The main <b>styles.js</b> file is the starting point of any JSS based application:</span>
           <code>
@@ -197,7 +228,6 @@ const <b>stylesheets</b> = {
 module.exports = {
   <b>stylesheets</b>
 };
-
             </pre>
           </code>
           <span>As you can see it defines a <b>root selector</b>, wich is the main selector to starts with, and exports
@@ -261,6 +291,72 @@ module.exports = {
           <span>As you can see this partials is the same of the main styles.js file, except for root selector. Remember
             to <b>include</b> your partials into the styles.js file
             to see your properties in action.</span>
+        </div>
+        <div class="DocumentationPart" id="variables">
+          <h2>Shared variables and methods</h2>
+          <span>With JSSheet you can define global <b>variables</b> and <b>methods</b> to recycle the same code and
+            properties between <i>partials</i>.</span>
+          <span>So like advanced css or precompiled css you can define global variables and methods (<i>mixins in
+              scss</i>).</span>
+          <h3>Global shared Variables</h3>
+          <span>For example we want to define a global <b>colors</b> variable mapping, so we can create a
+            <i>variables.js</i> file (name as you like), and import it
+            in your partials:</span>
+          <h5>-- <i>variables.js</i></h5>
+          <code>
+            <pre>
+[...]
+const <b>colors</b> = {
+  primary: "#323232",
+  secondary: "lawngreen",
+  tertiary: "rgba(255,255,255,1)",
+  dark: "rgb(0,0,0)"
+};
+[...]
+module.exports = {
+  <b>colors</b>,
+  otherVars
+};</pre>
+          </code>
+          <span>As you can see we have defined and exported a <b>colors</b> variable in your <i>variables.js</i>
+            file.</span>
+          <span>Now we can use this variables in your JSSheets:</span>
+          <h5>-- <i>styles.js</i></h5>
+          <pre>
+[...]
+<i>// import the variables first in your stylesheet</i>
+const {<b>colors</b>} = require(<b>'path/to/variables.js'</b>);
+[...]
+<i>// then use it in your styles:</i>
+const stylesheets = {
+  root: {
+    selector: "body",
+    backgroundColor: <b>colors.primary</b>
+    [...]
+  }
+};
+[...]</pre>
+          </code>
+          <span>By this way you can edit the colors once in your variables.js file to propagate the edit to all the
+            stylesheets!</span>
+          <h3>Global shared Methods</h3>
+          <span>You can define global (or local) shared utilities methods like the variables. This could be useful to
+            handle custom global behaviors.</span>
+          <span>For example, we want to define a <b>widthByPadding</b> method, wich returns a dynamic css
+            property:</span>
+          <code>
+            <pre>const <i>widthByPadding</i> = (padding) => <b>`calc(100% - ${padding}*2)</b>`;</pre>
+          </code>
+          <span>This method returns a dynamic css property, a 100% width minus the padding passed. We can use this
+            method in our styles:</span>
+          <code>
+            <pre>
+[...]
+width: <i>widthByPadding(<b>'1rem'</b>)</i>,
+[...]</pre>
+          </code>
+          <span>You can now define a global shared file (e.g. <i>mixins.js</i>) wich defines and exports the global
+            method, and reuse it in your stylesheets!</span>
         </div>
       </div>
     </div>

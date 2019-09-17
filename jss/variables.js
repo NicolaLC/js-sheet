@@ -9,8 +9,8 @@ const fonts = {
 	main: "'B612 Mono', monospace",
 	secondary: "'Rubik', sans-serif",
 	sizes: {
-		h1: "10vw",
-		h2: "2rem",
+		h1: "4rem",
+		h2: "3rem",
 		h3: "1.5rem",
 		p: "1rem",
 		small: '.75rem'
@@ -21,7 +21,7 @@ const fonts = {
 const colors = {
 	primary: "#323232",
 	secondary: "#14ffec",
-	tertiary: "#0d7377",
+	tertiary: "#e14594",
 	dark: "#212121"
 };
 
