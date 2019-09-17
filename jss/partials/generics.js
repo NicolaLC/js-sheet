@@ -34,6 +34,7 @@ const generics = [
 		selector: "::-webkit-scrollbar",
 		width: ".25rem",
 		height: ".25rem",
+		background: colors.dark
 	},
 	{
 		selector: "::-webkit-scrollbar-thumb",
@@ -85,9 +86,13 @@ const generics = [
 		textDecoration: 'none'
 	},
 	{
-		selector: 'i, b',
+		selector: 'b',
 		fontWeight: 'bold',
 		color: colors.secondary
+	},
+	{
+		selector: 'i',
+		color: colors.tertiary
 	},
 	{
 		selector: '.fc-secondary',

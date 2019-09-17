@@ -19,10 +19,10 @@ const fonts = {
 
 /// COLORS RELATED CONSTANTS
 const colors = {
-	primary: "#5f27cd",
-	secondary: "#48dbfb",
-	tertiary: "#22a6b3",
-	dark: "#4a4a4a"
+	primary: "#323232",
+	secondary: "#14ffec",
+	tertiary: "#0d7377",
+	dark: "#212121"
 };
 
 /// LAYOUT RELATED CONSTANTS

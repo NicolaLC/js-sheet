@@ -1,29 +1,23 @@
 const DOC_FOCUS_CLASSNAME = 'Focus';
 const documentationWrapper = document.querySelector('.Documentation');
-const documentationContent = documentationWrapper.querySelector('.DocumentationContent');
+
 function elementInViewport(el) {
   var top = el.offsetTop;
-
+  var height = el.offsetTop + el.offsetHeight - 550;
   return (
-    top >= window.pageYOffset
+    window.pageYOffset >= top && window.pageYOffset <= height
   );
 }
 
 function checkDocumentationInViewport() {
-  if (!documentationWrapper.classList.contains(DOC_FOCUS_CLASSNAME) && elementInViewport(documentationWrapper)) {
+  if (elementInViewport(documentationWrapper)) {
     documentationWrapper.classList.add(DOC_FOCUS_CLASSNAME);
-  }
-}
-
-function checkDocumentationContentScroll() {
-  const { scrollTop } = documentationContent;
-  console.log(scrollTop);
-  if (scrollTop === 0 || scrollTop >= documentationContent.scrollHeight / 2) {
+  } else {
     documentationWrapper.classList.remove(DOC_FOCUS_CLASSNAME);
   }
 }
 
 (function () {
   window.addEventListener('scroll', checkDocumentationInViewport, true);
-  documentationContent.addEventListener('scroll', checkDocumentationContentScroll, false)
+  checkDocumentationInViewport();
 })()

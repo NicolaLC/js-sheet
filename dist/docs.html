@@ -44,28 +44,28 @@
           <li class="MenuTitle">Getting started</li>
           <li>
             <a href="#about-jss">
-              About JSSheet
+              💭 About JSSheet
             </a>
           </li>
           <li>
             <a href="#how-does">
-              How does it works
+              ❓ How does it works
             </a>
           </li>
           <li>
             <a href="#hello-world-tutorial">
-              Hello JSSheet!
+              👋 Hello JSSheet!
             </a>
           </li>
           <li class="MenuTitle">Layout definitions</li>
           <li>
-            <a href="#">
-              [TODO] The styles.js file
+            <a href="#styles-js">
+              💜 The styles.js file
             </a>
           </li>
           <li>
-            <a href="#">
-              [TODO] Partials
+            <a href="partials">
+              💔 Partials
             </a>
           </li>
           <li>
@@ -178,6 +178,89 @@ module.exports = {
           <span>Now the example is running @ <b><a href="http://localhost:4040"
                 target="_blank">http://localhost:4040</a></b>, you can copy-cat this example to start your own
             website!</span>
+        </div>
+        <div class="DocumentationPart" id="styles-js">
+          <h2>The main <b>styles.js</b> file</h2>
+          <span>The project has a <b>jss</b> core folder, in there we can define our JSS styles starting from the
+            <b>styles.js</b> core file.</span>
+          <span>The main <b>styles.js</b> file is the starting point of any JSS based application:</span>
+          <code>
+            <pre>
+const <b>stylesheets</b> = {
+  <b>root</b>: {
+    selector: "body",
+    ...bodyProps
+    children: [<b>...childrens</b>]
+  }
+};
+
+module.exports = {
+  <b>stylesheets</b>
+};
+
+            </pre>
+          </code>
+          <span>As you can see it defines a <b>root selector</b>, wich is the main selector to starts with, and exports
+            a <b>stylesheets</b> variable wich will be
+            used for JSS parsing.</span>
+          <span>Remember to start from this file, and include <i>(by imports)</i> your partials!</span>
+        </div>
+        <div class="DocumentationPart" id="partials">
+          <h2>Partials</h2>
+          <span>The <b>partials</b> are separated JSS files to use for separate stylings, for example if you have
+            different layout parts (header, body, footer) you
+            can separate their styles into <b>partials:</b></span>
+          <code>
+            <pre>
+/// Get partials
+const { body } = require("./partials/body");
+const { header } = require("./partials/header");
+const { footer } = require("./partials/footer");
+const <b>stylesheets</b> = {
+  <b>root</b>: {
+    selector: "body",
+    ...bodyProps
+    children: [
+      <b>body</b>,
+      <b>header</b>,
+      <b>footer</b>
+    ]
+  }
+};
+
+module.exports = {
+  <b>stylesheets</b>
+};
+            </pre>
+          </code>
+          <span>By this way you can organize your styles into different files, to improve your styles
+            readability.</span>
+          <h3>Partial example</h3>
+          <span>A partial file is the same of the styles file, except for the <b>root</b> selector, wich must be defined
+            inside the core <b>styles.js</b> file:</span>
+          <code>
+            <pre>
+/**
+* HEADER PARTIAL
+*/
+
+const <i>header</i> = {
+  selector: ".Header",
+  <b>...headerProps</b>,
+  children: [
+    <b>...headerChildrens</b>
+  ]
+};
+
+module.exports = {
+  <i>header</i>
+};
+
+            </pre>
+          </code>
+          <span>As you can see this partials is the same of the main styles.js file, except for root selector. Remember
+            to <b>include</b> your partials into the styles.js file
+            to see your properties in action.</span>
         </div>
       </div>
     </div>

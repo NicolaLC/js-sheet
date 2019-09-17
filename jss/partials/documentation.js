@@ -4,10 +4,12 @@ const documentation = {
 	align: "top left row",
 	padding: "5rem 2rem",
 	transition: 'all .25s ease-out',
+	zIndex: '1',
 	children: [
 		{
 			selector: ".DocumentationMenu",
 			width: '25%',
+			transition: 'all .25s ease-out',
 			children: [
 				{
 					selector: 'ul',
@@ -20,7 +22,8 @@ const documentation = {
 							children: [
 								{
 									selector: 'a',
-									fontWeight: 'bold'
+									fontWeight: 'bold',
+									color: colors.secondary + '!important'
 								}
 							]
 						},
@@ -48,9 +51,8 @@ const documentation = {
 		},
 		{
 			selector: ".DocumentationContent",
-			overflowY: 'scroll',
+			overflowY: 'hidden',
 			width: '75%',
-			maxHeight: '800px',
 			padding: '0 1rem 0 0',
 			align: "top left column",
 			children: [
@@ -64,12 +66,17 @@ const documentation = {
 							margin: '1rem 0'
 						},
 						{
-							selector: '+ .DocumentationPart',
-							margin: '5rem 0 0 0'
+							selector: '& + .DocumentationPart',
+							margin: '2rem 0 0 0'
 						},
 						{
 							selector: 'h3',
-							margin: '0 0 2rem 0'
+							children: [
+								{
+									selector: '&:not(first-of-type)',
+									margin: '2rem 0'
+								}
+							]
 						},
 						{
 							selector: "pre",
@@ -91,10 +98,20 @@ const documentation = {
 		},
 		{
 			selector: '&.Focus',
-			position: 'fixed',
-			top: 0,
-			left: 0,
-			height: '100%'
+			position: 'relative',
+			children: [
+				{
+					selector: '.DocumentationMenu',
+					position: 'fixed',
+					maxWidth: 'calc(25% - 2rem)',
+					top: '5rem',
+					left: '2rem'
+				},
+				{
+					selector: '.DocumentationContent',
+					margin: '0 0 0 25%'
+				}
+			]
 		}
 	]
 };

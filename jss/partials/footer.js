@@ -21,6 +21,7 @@ const footer = {
 	width: "100%",
 	backgroundColor: colors.dark,
 	display: 'grid',
+	zIndex: '1001',
 	gridTemplate: {
 		columns: 'repeat( auto-fit, minmax(250px, 1fr) );'
 	},
