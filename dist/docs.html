@@ -2,120 +2,122 @@
 
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
 
-    <title>JSSheet Documentation</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="JSSheet website" />
-    <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
-    <meta name="author" content="nicolacastellanidev@gmail.com" />
-    <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist.css" />
-  </head>
+  <title>JSSheet Documentation</title>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="description" content="JSSheet website" />
+  <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
+  <meta name="author" content="nicolacastellanidev@gmail.com" />
+  <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist.css" />
+</head>
 
-  <body>
-    <!-- HEADER -->
-    <div class="Header">
-      <h2>Documentation</h2>
-      <img src="assets/images/jssheet.png" alt="JSSheet logo" />
-    </div>
-    <!-- MENU -->
-    <div class="Menu" onclick="toggleMenu()">
-      <div class="MenuIcon"></div>
-      <div class="MenuWrapper">
-        <a href="index.html">
-          <div class="MenuItem">
-            Home
-          </div>
-        </a>
-        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
-          <div class="MenuItem">
-            GitHub
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- BODY -->
-    <div class="Body Documentation">
-      <div class="DocumentationMenu">
-        <ul>
-          <li class="MenuTitle">Getting started</li>
-          <li>
-            <a href="#about-jss">
-              💭 About JSSheet
-            </a>
-          </li>
-          <li>
-            <a href="#how-does">
-              ❓ How does it works
-            </a>
-          </li>
-          <li>
-            <a href="#why">
-              🤔 Why should I use it
-            </a>
-          </li>
-          <li>
-            <a href="#hello-world-tutorial">
-              👋 Hello JSSheet!
-            </a>
-          </li>
-          <li class="MenuTitle">Layout definitions</li>
-          <li>
-            <a href="#styles-js">
-              💜 The styles.js file
-            </a>
-          </li>
-          <li>
-            <a href="#partials">
-              💔 Partials
-            </a>
-          </li>
-          <li>
-            <a href="#variables">
-              🤝 Shared variables and methods
-            </a>
-          </li>
-          <li class="MenuTitle">Shortcuts</li>
-          <li>
-            <a href="#">
-              [TODO] The align property
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              [TODO] The gridTemplate property
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              [TODO] camelCased properties
-            </a>
-          </li>
-          <li class="MenuTitle">Media Queries</li>
-          <li class="MenuTitle">Animations</li>
-          <li class="MenuTitle">Parse extensions and customizations</li>
-        </ul>
-      </div>
-      <div class="DocumentationContent">
-        <div class="DocumentationPart" id="about-jss">
-          <h2>What is JSSheet</h2>
-          <span><b>JSSheet</b> is a new way to create stylesheets for your websites, it uses <b>JavaScript</b> to create
-            minified
-            <b>CSS</b> files.</span>
-          <hr>
-          <span>The goal is to handle styles and logic with a <i>single language</i>, and to create some cool
-            <b>shortcuts</b> to
-            handle complex <b>flexbox</b> and <b>css grids</b> layouts</span>
+<body>
+  <!-- HEADER -->
+  <div class="Header">
+    <h2>Documentation</h2>
+    <img src="assets/images/jssheet.png" alt="JSSheet logo" />
+  </div>
+  <!-- MENU -->
+  <div class="Menu" onclick="toggleMenu()">
+    <div class="MenuIcon"></div>
+    <div class="MenuWrapper">
+      <a href="index.html">
+        <div class="MenuItem">
+          Home
         </div>
-        <div class="DocumentationPart" id="how-does">
-          <h2>How does it works</h2>
-          <span>The logic behind is pretty simple, we define a main <i>.js</i> file called <b>styles.js</b>, wich
-            exports
-            a <i>stylesheets</i> object: </span>
-          <code>
+      </a>
+      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
+        <div class="MenuItem">
+          GitHub
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- BODY -->
+  <div class="Body Documentation">
+    <div class="DocumentationMenu">
+      <ul>
+        <li class="MenuTitle">Getting started</li>
+        <li>
+          <a href="#about-jss">
+            💭 About JSSheet
+          </a>
+        </li>
+        <li>
+          <a href="#how-does">
+            ❓ How does it works
+          </a>
+        </li>
+        <li>
+          <a href="#why">
+            🤔 Why should I use it
+          </a>
+        </li>
+        <li>
+          <a href="#hello-world-tutorial">
+            👋 Hello JSSheet!
+          </a>
+        </li>
+        <li class="MenuTitle">Layout definitions</li>
+        <li>
+          <a href="#styles-js">
+            💜 The styles.js file
+          </a>
+        </li>
+        <li>
+          <a href="#partials">
+            💔 Partials
+          </a>
+        </li>
+        <li>
+          <a href="#variables">
+            🤝 Shared variables and methods
+          </a>
+        </li>
+        <li class="MenuTitle">Shortcuts</li>
+        <li>
+          <a href="#align-shortcut">
+            🆒 The align property
+          </a>
+        </li>
+        <li>
+          <a href="#grid-shortcut">
+            📱 The gridTemplate property
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            🐫 camelCased properties
+          </a>
+        </li>
+        <li class="MenuTitle">Media Queries</li>
+        <li class="MenuTitle">Animations</li>
+        <li class="MenuTitle">Parse extensions and customizations</li>
+      </ul>
+    </div>
+    <div class="DocumentationContent">
+      <div class="DocumentationPart" id="about-jss">
+        <h2>What is JSSheet</h2>
+        <span>⚠️<b>NOTE</b> this is a prototype project and still a WIP - consider to test it before using in
+          production!</span>
+        <hr>
+        <span><b>JSSheet</b> is a new way to create stylesheets for your websites, it uses <b>JavaScript</b> to create
+          minified
+          <b>CSS</b> files.</span>
+        <span>The goal is to handle styles and logic with a <i>single language</i>, and to create some cool
+          <b>shortcuts</b> to
+          handle complex <b>flexbox</b> and <b>css grids</b> layouts</span>
+      </div>
+      <div class="DocumentationPart" id="how-does">
+        <h2>How does it works</h2>
+        <span>The logic behind is pretty simple, we define a main <i>.js</i> file called <b>styles.js</b>, wich
+          exports
+          a <i>stylesheets</i> object: </span>
+        <code>
           <pre>
 /**
 * HELLO WORLD EXAMPLE
@@ -148,74 +150,72 @@ module.exports = {
 };
           </pre>
         </code>
-          <span>
-            As you can see the main <i>stylesheets</i> component defines a <i>:root</i> selector, wich is the starting
-            point for JSSheet.
-          </span>
-        </div>
-        <div class="DocumentationPart" id="why">
-          <h2>JSSheet advantages</h2>
-          <span>⚠️<b>NOTE</b> this is a prototype project and still a WIP - consider to test it before using in
-            production!</span><br>
-          <h3>JSSheets PROS</h3>
-          <ol>
-            <li>
-              <i>Unique</i> styling and logic <i>language</i>
-            </li>
-            <li>
-              <i>Simple-to-recycle</i> variables and methods
-            </li>
-            <li>
-              Vertical and Horizontal <i>alignment shortcuts</i>!
-            </li>
-            <li>
-              Style <i>documentation</i> with <b>js-docs</b> syntax (or custom)
-            </li>
-            <li>
-              Better <i>code completition</i> with custom or built in Javascript IDE plugin
-            </li>
-            <li>
-              Custom css shortcuts creations by <b>gulpfile</b> custom edits
-            </li>
-          </ol>
-        </div>
-        <div class="DocumentationPart" id="hello-world-tutorial">
-          <h2>Hello JSSheet!</h2>
-          <img src="./assets/images/docs/01.PNG" loading="lazy" alt="js-sheet hello world tutorial" /><br>
-          <span>This is a simple introductive tutorial to start with JSSheet, you will see <i>how to install the
-              dependencies</i>
-            and <i>start the parser.</i></span>
-          <hr>
-          <h3>Step 0. prerequisites</h3>
-          <span>
-            You need to install <a href="https://nodejs.org/it/" target="_blank">NodeJS</a> and <a
-              href="https://gulpjs.com/" target="_blank">Gulp</a> to use JSSheet,
-            <a href="https://yarnpkg.com/lang/en/" target="_blank">yarn</a> is optional, but suggested as default
-            package
-            manager.
-          </span>
-          <h3>Step 1. clone the repository and install dependencies</h3>
-          <span>Clone the repository:</span>
-          <code><pre><span class="fc-tertiary">git clone</span> <span class="fc-secondary">https://github.com/NicolaLC/js-sheet.git</span></pre></code>
-          <span>Navigate to the hello-world tutorial:</span>
-          <code><pre><span class="fc-tertiary">cd</span> <span class="fc-secondary">js-sheet/tutorials/hello-world</span></pre></code>
-          <span>Install dependencies:</span><br>
-          <span class="fc-secondary f-small"><b>Note:</b> if yarn is not installed run <span class="fc-tertiary">npm i
-              -g
-              yarn</span></span>
-          <code><pre><span class="fc-tertiary">yarn</span> </pre></code>
-          <span>Run the parser and the server:</span><br>
-          <code><pre><span class="fc-tertiary">yarn dev</span> </pre></code>
-          <span>Now the example is running @ <b><a href="http://localhost:4040"
-                target="_blank">http://localhost:4040</a></b>, you can copy-cat this example to start your own
-            website!</span>
-        </div>
-        <div class="DocumentationPart" id="styles-js">
-          <h2>The main <b>styles.js</b> file</h2>
-          <span>The project has a <b>jss</b> core folder, in there we can define your JSS styles starting from the
-            <b>styles.js</b> core file.</span>
-          <span>The main <b>styles.js</b> file is the starting point of any JSS based application:</span>
-          <code>
+        <span>
+          As you can see the main <i>stylesheets</i> component defines a <i>:root</i> selector, wich is the starting
+          point for JSSheet.
+        </span>
+      </div>
+      <div class="DocumentationPart" id="why">
+        <h2>JSSheet advantages</h2>
+        <h3>JSSheets PROS</h3>
+        <ol>
+          <li>
+            <i>Unique</i> styling and logic <i>language</i>
+          </li>
+          <li>
+            <i>Simple-to-recycle</i> variables and methods
+          </li>
+          <li>
+            Layout and other <i>css shortcuts</i>!
+          </li>
+          <li>
+            Style <i>documentation</i> with <b>js-docs</b> syntax (or custom)
+          </li>
+          <li>
+            Better <i>code completition</i> with custom or built in Javascript IDE plugin
+          </li>
+          <li>
+            Custom css shortcuts creations by <b>gulpfile</b> custom edits
+          </li>
+        </ol>
+      </div>
+      <div class="DocumentationPart" id="hello-world-tutorial">
+        <h2>Hello JSSheet!</h2>
+        <img src="./assets/images/docs/01.PNG" loading="lazy" alt="js-sheet hello world tutorial" /><br>
+        <span>This is a simple introductive tutorial to start with JSSheet, you will see <i>how to install the
+            dependencies</i>
+          and <i>start the parser.</i></span>
+        <hr>
+        <h3>Step 0. prerequisites</h3>
+        <span>
+          You need to install <a href="https://nodejs.org/it/" target="_blank">NodeJS</a> and <a
+            href="https://gulpjs.com/" target="_blank">Gulp</a> to use JSSheet,
+          <a href="https://yarnpkg.com/lang/en/" target="_blank">yarn</a> is optional, but suggested as default
+          package
+          manager.
+        </span>
+        <h3>Step 1. clone the repository and install dependencies</h3>
+        <span>Clone the repository:</span>
+        <code><pre><span class="fc-tertiary">git clone</span> <span class="fc-secondary">https://github.com/NicolaLC/js-sheet.git</span></pre></code>
+        <span>Navigate to the hello-world tutorial:</span>
+        <code><pre><span class="fc-tertiary">cd</span> <span class="fc-secondary">js-sheet/tutorials/hello-world</span></pre></code>
+        <span>Install dependencies:</span><br>
+        <span class="fc-secondary f-small"><b>Note:</b> if yarn is not installed run <span class="fc-tertiary">npm i
+            -g
+            yarn</span></span>
+        <code><pre><span class="fc-tertiary">yarn</span> </pre></code>
+        <span>Run the parser and the server:</span><br>
+        <code><pre><span class="fc-tertiary">yarn dev</span> </pre></code>
+        <span>Now the example is running @ <b><a href="http://localhost:4040"
+              target="_blank">http://localhost:4040</a></b>, you can copy-cat this example to start your own
+          website!</span>
+      </div>
+      <div class="DocumentationPart" id="styles-js">
+        <h2>The main <b>styles.js</b> file</h2>
+        <span>The project has a <b>jss</b> core folder, in there we can define your JSS styles starting from the
+          <b>styles.js</b> core file.</span>
+        <span>The main <b>styles.js</b> file is the starting point of any JSS based application:</span>
+        <code>
             <pre>
 const <b>stylesheets</b> = {
   <b>root</b>: {
@@ -230,17 +230,17 @@ module.exports = {
 };
             </pre>
           </code>
-          <span>As you can see it defines a <b>root selector</b>, wich is the main selector to starts with, and exports
-            a <b>stylesheets</b> variable wich will be
-            used for JSS parsing.</span>
-          <span>Remember to start from this file, and include <i>(by imports)</i> your partials!</span>
-        </div>
-        <div class="DocumentationPart" id="partials">
-          <h2>Partials</h2>
-          <span>The <b>partials</b> are separated JSS files to use for separate stylings, for example if you have
-            different layout parts (header, body, footer) you
-            can separate their styles into <b>partials:</b></span>
-          <code>
+        <span>As you can see it defines a <b>root selector</b>, wich is the main selector to starts with, and exports
+          a <b>stylesheets</b> variable wich will be
+          used for JSS parsing.</span>
+        <span>Remember to start from this file, and include <i>(by imports)</i> your partials!</span>
+      </div>
+      <div class="DocumentationPart" id="partials">
+        <h2>Partials</h2>
+        <span>The <b>partials</b> are separated JSS files to use for separate stylings, for example if you have
+          different layout parts (header, body, footer) you
+          can separate their styles into <b>partials:</b></span>
+        <code>
             <pre>
 /// Get partials
 const { body } = require("./partials/body");
@@ -263,12 +263,12 @@ module.exports = {
 };
             </pre>
           </code>
-          <span>By this way you can organize your styles into different files, to improve your styles
-            readability.</span>
-          <h3>Partial example</h3>
-          <span>A partial file is the same of the styles file, except for the <b>root</b> selector, wich must be defined
-            inside the core <b>styles.js</b> file:</span>
-          <code>
+        <span>By this way you can organize your styles into different files, to improve your styles
+          readability.</span>
+        <h3>Partial example</h3>
+        <span>A partial file is the same of the styles file, except for the <b>root</b> selector, wich must be defined
+          inside the core <b>styles.js</b> file:</span>
+        <code>
             <pre>
 /**
 * HEADER PARTIAL
@@ -288,22 +288,22 @@ module.exports = {
 
             </pre>
           </code>
-          <span>As you can see this partials is the same of the main styles.js file, except for root selector. Remember
-            to <b>include</b> your partials into the styles.js file
-            to see your properties in action.</span>
-        </div>
-        <div class="DocumentationPart" id="variables">
-          <h2>Shared variables and methods</h2>
-          <span>With JSSheet you can define global <b>variables</b> and <b>methods</b> to recycle the same code and
-            properties between <i>partials</i>.</span>
-          <span>So like advanced css or precompiled css you can define global variables and methods (<i>mixins in
-              scss</i>).</span>
-          <h3>Global shared Variables</h3>
-          <span>For example we want to define a global <b>colors</b> variable mapping, so we can create a
-            <i>variables.js</i> file (name as you like), and import it
-            in your partials:</span>
-          <h5>-- <i>variables.js</i></h5>
-          <code>
+        <span>As you can see this partials is the same of the main styles.js file, except for root selector. Remember
+          to <b>include</b> your partials into the styles.js file
+          to see your properties in action.</span>
+      </div>
+      <div class="DocumentationPart" id="variables">
+        <h2>Shared variables and methods</h2>
+        <span>With JSSheet you can define global <b>variables</b> and <b>methods</b> to recycle the same code and
+          properties between <i>partials</i>.</span>
+        <span>So like advanced css or precompiled css you can define global variables and methods (<i>mixins in
+            scss</i>).</span>
+        <h3>Global shared Variables</h3>
+        <span>For example we want to define a global <b>colors</b> variable mapping, so we can create a
+          <i>variables.js</i> file (name as you like), and import it
+          in your partials:</span>
+        <h5>-- <i>variables.js</i></h5>
+        <code>
             <pre>
 [...]
 const <b>colors</b> = {
@@ -318,11 +318,11 @@ module.exports = {
   otherVars
 };</pre>
           </code>
-          <span>As you can see we have defined and exported a <b>colors</b> variable in your <i>variables.js</i>
-            file.</span>
-          <span>Now we can use this variables in your JSSheets:</span>
-          <h5>-- <i>styles.js</i></h5>
-          <pre>
+        <span>As you can see we have defined and exported a <b>colors</b> variable in your <i>variables.js</i>
+          file.</span>
+        <span>Now we can use this variables in your JSSheets:</span>
+        <h5>-- <i>styles.js</i></h5>
+        <pre>
 [...]
 <i>// import the variables first in your stylesheet</i>
 const {<b>colors</b>} = require(<b>'path/to/variables.js'</b>);
@@ -336,92 +336,181 @@ const stylesheets = {
   }
 };
 [...]</pre>
-          </code>
-          <span>By this way you can edit the colors once in your variables.js file to propagate the edit to all the
-            stylesheets!</span>
-          <h3>Global shared Methods</h3>
-          <span>You can define global (or local) shared utilities methods like the variables. This could be useful to
-            handle custom global behaviors.</span>
-          <span>For example, we want to define a <b>widthByPadding</b> method, wich returns a dynamic css
-            property:</span>
-          <code>
+        </code>
+        <span>By this way you can edit the colors once in your variables.js file to propagate the edit to all the
+          stylesheets!</span>
+        <h3>Global shared Methods</h3>
+        <span>You can define global (or local) shared utilities methods like the variables. This could be useful to
+          handle custom global behaviors.</span>
+        <span>For example, we want to define a <b>widthByPadding</b> method, wich returns a dynamic css
+          property:</span>
+        <code>
             <pre>const <i>widthByPadding</i> = (padding) => <b>`calc(100% - ${padding}*2)</b>`;</pre>
           </code>
-          <span>This method returns a dynamic css property, a 100% width minus the padding passed. We can use this
-            method in our styles:</span>
-          <code>
+        <span>This method returns a dynamic css property, a 100% width minus the padding passed. We can use this
+          method in our styles:</span>
+        <code>
             <pre>
 [...]
 width: <i>widthByPadding(<b>'1rem'</b>)</i>,
 [...]</pre>
           </code>
-          <span>You can now define a global shared file (e.g. <i>mixins.js</i>) wich defines and exports the global
-            method, and reuse it in your stylesheets!</span>
+        <span>You can now define a global shared file (e.g. <i>mixins.js</i>) wich defines and exports the global
+          method, and reuse it in your stylesheets!</span>
+      </div>
+      <div class="DocumentationPart" id="align-shortcut">
+        <h2>The align property shortcut</h2>
+        <span>In JSSheet you can define <b>flexbox</b> driven layout in a seconds with the <b>align</b> property
+          shortcut!</span>
+        <hr>
+        <span>The align property shortcut lets you define complex or simple <i>flexbox</i> layouts:</span>
+        <code>
+          <pre>align: 'center';</pre>
+        </code>
+        <span>This shortcut will create a <i>flexbox</i> layout item:</span><br><br>
+        <i>align: 'center'</i>
+        <div class="Example AlignCenter">
+          Cool, I'm on center!
+        </div>
+        <i>align: 'center'</i>
+        <div class="Example AlignCenter">
+          <p>Cool, I'm on center!</p>
+          <hr>
+          <i>Me too!</i>
+        </div>
+        <i>align: 'center column'</i>
+        <div class="Example AlignCenterColumn">
+          <p>Cool, I'm on center!</p>
+          <hr>
+          <i>Me too! but in column!</i>
+        </div>
+        <hr>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>CSS relative code</th>
+          </tr>
+          <tr>
+            <td><b>row</b></td>
+            <td>flex-direction: <i>row</i></td>
+          </tr>
+          <tr>
+            <td><b>column</b></td>
+            <td>flex-direction: <i>column</i></td>
+          </tr>
+          <tr>
+            <td><b>top</b></td>
+            <td>align-items: <i>flex-start</i></td>
+          </tr>
+          <tr>
+            <td><b>bottom</b></td>
+            <td>align-items: <i>flex-end</i></td>
+          </tr>
+          <tr>
+            <td><b>center</b></td>
+            <td>align-items: <i>center</i> + justify-content: <i>center</i></td>
+          </tr>
+          <tr>
+            <td><b>left</b></td>
+            <td>justify-content: <i>flex-start</i></td>
+          </tr>
+          <tr>
+            <td><b>right</b></td>
+            <td>justify-content: <i>flex-end</i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="DocumentationPart" id="grid-shortcut">
+        <h2>The gridTemplate shortcut</h2>
+        <span>Like the <b>align</b> shortcut, you can define grid layout by the <i>gridTemplate</i> shortcut:</span>
+        <hr>
+        <code>
+          <pre>
+gridTemplate: {
+  <i>columns</i>: 'repeat( 33.33%, minmax(250px, 1fr) );'
+  <i>rows</i>: 'repeat( 33.33%, minmax(250px, 1fr) );'
+},</pre>
+        </code>
+        <i>Result:</i>
+        <div class="Example GridTemplate">
+          <p>1-1</p>
+          <p>1-2</p>
+          <p>1-3</p>
+          <p>2-1</p>
+          <p>2-2</p>
+          <p>2-3</p>
+          <p>3-1</p>
+          <p>3-2</p>
+          <p>3-3</p>
         </div>
       </div>
-    </div>
-    <!-- FOOTER -->
-    <div class="Footer">
-      <div class="FooterElement">
-        <h2>Nicola Castellani</h2>
-        <h4>About me</h4>
-        <p>
-          I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
-          latests techniques in web development.
-
-          My work method is really simple: prototype more, work less.
-
-          If you need a job in a short time, I'm not the right person for you. Personally I think than also the simplest
-          project in the world needs its time, because it needs study, prototype and tests.
-
-          In my free time I love to study, try and learn new technologies, or simply improve my skills.
-          Obiviously I'm also an human so I love to walk around the incredible mountains and places near my city, play
-          fusball or just chill out with my kittens.
-        </p>
-      </div>
-      <div class="FooterElement">
-        <h2>My links</h2>
-        <h4>Add me on socials or visit my websites</h4>
-        <a href="https://www.linkedin.com/in/nicola-castellani-313b9084/" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://www.facebook.com/NicolaLeCast" target="_blank">
-          Facebook
-        </a>
-        <a href="https://github.com/NicolaLC" target="_blank">
-          GitHub
-        </a>
-        <a href="http://nicawd.herokuapp.com/" target="_blank">
-          Personal Website
-        </a>
-      </div>
-      <div class="FooterElement">
-        <h2>JSSheet</h2>
-        <h4>Created by my passion for css and javascript</h4>
-        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
-          GitHub
-        </a>
+      <div class="DocumentationPart" id="camelcased">
+        <h2>camelCased properties</h2>
       </div>
     </div>
-    <!-- MEDIA QUERIES HELPER -->
-    <div class="MQHelper">
-      <div id="MQHelperMobile">
-        mobile
-      </div>
-      <div id="MQHelperTablet">
-        tablet
-      </div>
-      <div id="MQHelperDesktop">
-        desktop
-      </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="Footer">
+    <div class="FooterElement">
+      <h2>Nicola Castellani</h2>
+      <h4>About me</h4>
+      <p>
+        I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
+        latests techniques in web development.
+
+        My work method is really simple: prototype more, work less.
+
+        If you need a job in a short time, I'm not the right person for you. Personally I think than also the simplest
+        project in the world needs its time, because it needs study, prototype and tests.
+
+        In my free time I love to study, try and learn new technologies, or simply improve my skills.
+        Obiviously I'm also an human so I love to walk around the incredible mountains and places near my city, play
+        fusball or just chill out with my kittens.
+      </p>
     </div>
-    <script src="/reload/reload.js"></script>
-    <script>
-      const toggleMenu = () => {
-        document.querySelector('.MenuWrapper').classList.toggle('Opened');
-      }
-    </script>
-    <script src="assets/scripts/enhancer.js"></script>
-  </body>
+    <div class="FooterElement">
+      <h2>My links</h2>
+      <h4>Add me on socials or visit my websites</h4>
+      <a href="https://www.linkedin.com/in/nicola-castellani-313b9084/" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://www.facebook.com/NicolaLeCast" target="_blank">
+        Facebook
+      </a>
+      <a href="https://github.com/NicolaLC" target="_blank">
+        GitHub
+      </a>
+      <a href="http://nicawd.herokuapp.com/" target="_blank">
+        Personal Website
+      </a>
+    </div>
+    <div class="FooterElement">
+      <h2>JSSheet</h2>
+      <h4>Created by my passion for css and javascript</h4>
+      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </div>
+  <!-- MEDIA QUERIES HELPER -->
+  <div class="MQHelper">
+    <div id="MQHelperMobile">
+      mobile
+    </div>
+    <div id="MQHelperTablet">
+      tablet
+    </div>
+    <div id="MQHelperDesktop">
+      desktop
+    </div>
+  </div>
+  <script src="/reload/reload.js"></script>
+  <script>
+    const toggleMenu = () => {
+      document.querySelector('.MenuWrapper').classList.toggle('Opened');
+    }
+  </script>
+  <script src="assets/scripts/enhancer.js"></script>
+</body>
 
 </html>

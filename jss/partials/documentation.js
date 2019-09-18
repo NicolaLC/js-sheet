@@ -82,6 +82,32 @@ const documentation = {
 							selector: "pre",
 							maxWidth: '100%',
 							margin: '2rem 0'
+						},
+						{
+							selector: '.Example',
+							width: '100%',
+							height: 'auto',
+							background: colors.secondary,
+							color: colors.primary,
+							padding: '1rem 0',
+							margin: '1rem 0',
+							children: [
+								{
+									selector: '&.AlignCenter',
+									align: 'center'
+								},
+								{
+									selector: '&.AlignCenterColumn',
+									align: 'center column'
+								},
+								{
+									selector: '&.GridTemplate',
+									gridTemplate: {
+										rows: 'repeat( 3, minmax(33.33%, 1fr) );',
+										columns: 'repeat( 3, minmax(33.33%, 1fr) );',
+									}
+								}
+							]
 						}
 					]
 				},

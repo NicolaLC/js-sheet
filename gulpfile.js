@@ -148,6 +148,7 @@ function parseProperties(properties, selector, parentSelector) {
 				result += `background-color:${properties[prop]};`;
 				break;
 			case "gridTemplate":
+				result += 'display: grid;'
 				const { columns, rows } = properties[prop];
 				if (columns) {
 					result += `grid-template-columns:${columns};`;

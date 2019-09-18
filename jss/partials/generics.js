@@ -109,6 +109,24 @@ const generics = [
 	{
 		selector: '.f-small',
 		fontSize: fonts.sizes.small
+	},
+	{
+		selector: 'table',
+		background: colors.dark,
+		width: '100%',
+		children: [
+			{
+				selector: 'th',
+				background: colors.secondary,
+				color: colors.primary,
+				textAlign: 'left',
+				padding: '.5rem'
+			},
+			{
+				selector: 'td',
+				padding: '.5rem'
+			}
+		]
 	}
 ];
 
