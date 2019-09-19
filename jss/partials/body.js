@@ -20,28 +20,27 @@ const body = {
 		{
 			selector: ":before",
 			content: " ",
-			height: "3rem",
-			transform: "rotate(1.5deg)",
+			height: "6.25rem",
 			width: "100%",
-			background: colors.primary,
+			background: 'url(assets/images/test.svg) transparent no-repeat',
+			"background-size": 'cover',
 			position: "absolute",
-			top: "-1rem",
+			top: "-6.25rem",
 			left: "0",
-			zIndex: "0",
-			"box-shadow": `0px -10px 0 0 ${colors.tertiary}`
+			zIndex: "0"
 		},
 		{
 			selector: ":after",
 			content: " ",
-			height: "3rem",
-			transform: "rotate(1.5deg)",
-			width: "101%",
-			background: colors.primary,
+			height: "6.25rem",
+			transform: "rotate(-180deg)",
+			width: "100%",
+			background: 'url(assets/images/test.svg) transparent no-repeat',
+			"background-size": 'cover',
 			position: "absolute",
-			bottom: "-1rem",
+			bottom: "-6.25rem",
 			left: "0",
-			zIndex: "0",
-			"box-shadow": `0px 10px 0 0 ${colors.tertiary}`
+			zIndex: "0"
 		},
 		{
 			selector: "p",

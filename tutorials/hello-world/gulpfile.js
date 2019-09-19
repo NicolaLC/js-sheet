@@ -42,7 +42,14 @@ function parseJSSheet(original) {
 
 function parseObject(root, parentSelector) {
 	let result = "";
-	const { selector } = root;
+	let { selector } = root;
+	if (selector.indexOf('&') > -1) {
+		parentSelector = (parentSelector || '').trim();
+		selector = selector.replace('&', '');
+		selector = parentSelector + selector;
+		parentSelector = undefined;
+		root.selector = selector;
+	}
 	result += parseElement(selector, root, parentSelector);
 	if (root.children) {
 		root.children.map(child => {
@@ -55,6 +62,13 @@ function parseObject(root, parentSelector) {
 function parseElement(selector, properties, parentSelector = "") {
 	if (parentSelector && selector.indexOf(":") < 0) {
 		parentSelector += " ";
+	}
+	const tempProp = Object.assign({}, properties);
+	delete tempProp.selector;
+	delete tempProp.children;
+	if (!Object.keys(tempProp).length) {
+		/// empty 
+		return '';
 	}
 	return `${properties.selector.indexOf('keyframes') < 0 ? parentSelector : ''}${selector}{${parseProperties(properties, selector, parentSelector)}}`;
 }
@@ -84,9 +98,6 @@ function parseProperties(properties, selector, parentSelector) {
 				break;
 			case "fontWeight":
 				result += `font-weight:${properties[prop]};`;
-				break;
-			case "fontFamily":
-				result += `font-family:${properties[prop]};`;
 				break;
 			case "zIndex":
 				result += `z-index:${properties[prop]};`;

@@ -2,75 +2,75 @@
 
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
 
-    <title>JSSheet</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="JSSheet website" />
-    <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
-    <meta name="author" content="nicolacastellanidev@gmail.com" />
-    <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist.css" />
-  </head>
+  <title>JSSheet</title>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="description" content="JSSheet website" />
+  <link rel="icon" href="assets/images/jssheet.png" type="image/png" />
+  <meta name="author" content="nicolacastellanidev@gmail.com" />
+  <link href="https://fonts.googleapis.com/css?family=B612+Mono:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist.css" />
+</head>
 
-  <body>
-    <!-- HEADER -->
-    <div class="Header">
-      <h1>JSSheet</h1>
-      <img src="assets/images/jssheet.png" alt="JSSheet logo" />
+<body>
+  <!-- HEADER -->
+  <div class="Header">
+    <h1>JSSheet</h1>
+    <img src="assets/images/jssheet.png" alt="JSSheet logo" />
+  </div>
+  <!-- MENU -->
+  <div class="Menu" onclick="toggleMenu()">
+    <div class="MenuIcon"></div>
+    <div class="MenuWrapper">
+      <a href="docs.html">
+        <div class="MenuItem">
+          Docs
+        </div>
+      </a>
+      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
+        <div class="MenuItem">
+          GitHub
+        </div>
+      </a>
     </div>
-    <!-- MENU -->
-    <div class="Menu" onclick="toggleMenu()">
-      <div class="MenuIcon"></div>
-      <div class="MenuWrapper">
-        <a href="docs.html">
-          <div class="MenuItem">
-            Docs
-          </div>
-        </a>
-        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
-          <div class="MenuItem">
-            GitHub
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- BODY -->
-    <div class="Body">
-      <div class="Title">Create Fast - Reusable css stylesheets!</div>
-      <h3>
-        Preface
-      </h3>
-      <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties
-        might
-        be missing.</p>
-      <p>I'm working alone and I'll add new features in the future like:</p>
-      <ul>
-        <li>Typescript Support</li>
-        <li>Documentation</li>
-        <li>IE Support</li>
-      </ul>
-      <h3>
-        What is?
-      </h3>
-      <p>
-        It's a new way to write css using Javascript!
-      </p>
-      <h3>
-        How does it works?
-      </h3>
-      <p>
-        JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
-        hierarchies using <b>children</b>.
-        A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
-      </p>
-      <p>
-        Starting from a <b>styles.js</b> element you can define css properties and
-        children:
-      </p>
-      <pre>
+  </div>
+  <!-- BODY -->
+  <div class="Body">
+    <div class="Title">Create Fast - Reusable css stylesheets!</div>
+    <h3>
+      Preface
+    </h3>
+    <p>This is a WIP, no documentation is currently done and the entire process might be buggy or some properties
+      might
+      be missing.</p>
+    <p>I'm working alone and I'll add new features in the future like:</p>
+    <ul>
+      <li>Typescript Support</li>
+      <li>Documentation</li>
+      <li>IE Support</li>
+    </ul>
+    <h3>
+      What is?
+    </h3>
+    <p>
+      It's a new way to write css using Javascript!
+    </p>
+    <h3>
+      How does it works?
+    </h3>
+    <p>
+      JSSheet is based on a javascript-driven layout, you can define multiple layouts using <b>partials</b> and
+      hierarchies using <b>children</b>.
+      A gulp watcher will compile the javascript component into a minified css called <b>dist.css</b>.
+    </p>
+    <p>
+      Starting from a <b>styles.js</b> element you can define css properties and
+      children:
+    </p>
+    <pre>
         <code>
 /**
 * ROOT STYLESHEET
@@ -105,11 +105,11 @@ module.exports = {
   stylesheets
 };</code>
       </pre>
-      <p>
-        <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
-        components:
-      </p>
-      <pre>
+    <p>
+      <b>partials</b> are sub-components wich can be separate from the main styles component and handled as atomic
+      components:
+    </p>
+    <pre>
           <code>
 /**
 * HEADER PARTIAL
@@ -141,84 +141,87 @@ module.exports = {
   header
 };</code>
         </pre>
-      <h3>
-        How can I use it?
-      </h3>
+    <h3>
+      How can I use it?
+    </h3>
+    <p>
+      Download the repository from <a href="https://github.com/NicolaLC/js-sheet"
+        target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
+    </p>
+    <p>From root directory:</p>
+    <pre><code><b>yarn</b> <i>(if yarn is not installed run <b>npm i yarn -g</b>)</i></code></pre>
+    <pre><code><b>yarn watch</b> <i>to start watching edits</i></code></pre>
+    <pre><code><b>yarn server</b> <i>to run the server @ localhost:3000</i></code></pre>
+    <p>If everything works fine you should see this page at <a href="http://localhost:3000"
+        target="_blank">localhost:3000</a>
+    </pre>
+    <p>Now you can start creating your own styles starting from this template!</p>
+    <b>Note:</b>
+    <br>
+    <pre><code><b>yarn dev</b> <i>to run the wather and the server @ localhost:3000 (if concurrently is not installed run <b>npm i concurrently -g</b>)</i></code></pre>
+    </p>
+  </div>
+  <!-- FOOTER -->
+  <div class="Footer">
+    <div class="FooterElement">
+      <h3>Nicola Castellani</h3>
+      <h4>About me</h4>
       <p>
-        Download the repository from <a href="https://github.com/NicolaLC/js-sheet"
-          target="_blank">https://github.com/NicolaLC/js-sheet</a> and follow those steps:
+        I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
+        latests techniques in web development.
+
+        My work method is really simple: prototype more, work less.
+
+        If you need a job in a short time, I'm not the right person for you. Personally I think than also the simplest
+        project in the world needs its time, because it needs study, prototype and tests.
+
+        In my free time I love to study, try and learn new technologies, or simply improve my skills.
+        Obiviously I'm also an human so I love to walk around the incredible mountains and places near my city, play
+        fusball or just chill out with my kittens.
       </p>
-      <p>From root directory:</p>
-      <pre><code><b>yarn</b> <i>(if yarn is not installed run <b>npm i yarn -g</b>)</i></code></pre>
-      <pre><code><b>yarn watch</b> <i>to start watching edits</i></code></pre>
-      <pre><code><b>yarn server</b> <i>to run the server @ localhost:3000</i></code></pre>
-      <p>If everything works fine you should see this page at <a href="http://localhost:3000"
-          target="_blank">localhost:3000</a>
-      </pre>
-      </p>
-      <p>Now you can start creating your own styles starting from this template!</p>
     </div>
-    <!-- FOOTER -->
-    <div class="Footer">
-      <div class="FooterElement">
-        <h3>Nicola Castellani</h3>
-        <h4>About me</h4>
-        <p>
-          I'm a web fullstack developer with a strong focus on creativity. I love to create unique products, using the
-          latests techniques in web development.
-
-          My work method is really simple: prototype more, work less.
-
-          If you need a job in a short time, I'm not the right person for you. Personally I think than also the simplest
-          project in the world needs its time, because it needs study, prototype and tests.
-
-          In my free time I love to study, try and learn new technologies, or simply improve my skills.
-          Obiviously I'm also an human so I love to walk around the incredible mountains and places near my city, play
-          fusball or just chill out with my kittens.
-        </p>
-      </div>
-      <div class="FooterElement">
-        <h3>My links</h3>
-        <h4>Add me on socials or visit my websites</h4>
-        <a href="https://www.linkedin.com/in/nicola-castellani-313b9084/" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://www.facebook.com/NicolaLeCast" target="_blank">
-          Facebook
-        </a>
-        <a href="https://github.com/NicolaLC" target="_blank">
-          GitHub
-        </a>
-        <a href="http://nicawd.herokuapp.com/" target="_blank">
-          Personal Website
-        </a>
-      </div>
-      <div class="FooterElement">
-        <h3>JSSheet</h3>
-        <h4>Created by my passion for css and javascript</h4>
-        <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
-          GitHub
-        </a>
-      </div>
+    <div class="FooterElement">
+      <h3>My links</h3>
+      <h4>Add me on socials or visit my websites</h4>
+      <a href="https://www.linkedin.com/in/nicola-castellani-313b9084/" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://www.facebook.com/NicolaLeCast" target="_blank">
+        Facebook
+      </a>
+      <a href="https://github.com/NicolaLC" target="_blank">
+        GitHub
+      </a>
+      <a href="http://nicawd.herokuapp.com/" target="_blank">
+        Personal Website
+      </a>
     </div>
-    <!-- MEDIA QUERIES HELPER -->
-    <div class="MQHelper">
-      <div id="MQHelperMobile">
-        mobile
-      </div>
-      <div id="MQHelperTablet">
-        tablet
-      </div>
-      <div id="MQHelperDesktop">
-        desktop
-      </div>
+    <div class="FooterElement">
+      <h3>JSSheet</h3>
+      <h4>Created by my passion for css and javascript</h4>
+      <a href="https://github.com/NicolaLC/js-sheet" target="_blank">
+        GitHub
+      </a>
     </div>
-    <script src="/reload/reload.js"></script>
-    <script>
-      const toggleMenu = () => {
-        document.querySelector('.MenuWrapper').classList.toggle('Opened');
-      }
-    </script>
-  </body>
+  </div>
+  <!-- MEDIA QUERIES HELPER -->
+  <div class="MQHelper">
+    <div id="MQHelperMobile">
+      mobile
+    </div>
+    <div id="MQHelperTablet">
+      tablet
+    </div>
+    <div id="MQHelperDesktop">
+      desktop
+    </div>
+  </div>
+  <script src="/reload/reload.js"></script>
+  <script>
+    const toggleMenu = () => {
+      document.querySelector('.MenuWrapper').classList.toggle('Opened');
+    }
+  </script>
+</body>
 
 </html>

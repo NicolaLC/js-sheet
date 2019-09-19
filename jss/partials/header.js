@@ -35,6 +35,14 @@ const header = {
 				animation: 'vibrate 0.3s linear infinite both',
 				cursor: 'pointer'
 			}]
+		},
+		{
+			selector: 'h1',
+			color: colors.tertiary
+		},
+		{
+			selector: 'h2',
+			color: colors.tertiary
 		}
 	]
 };

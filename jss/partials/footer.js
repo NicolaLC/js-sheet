@@ -22,6 +22,7 @@ const footer = {
 	backgroundColor: colors.dark,
 	display: 'grid',
 	zIndex: '1001',
+	padding: '2rem 0 0 0',
 	gridTemplate: {
 		columns: 'repeat( auto-fit, minmax(250px, 1fr) );'
 	},

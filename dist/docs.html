@@ -90,13 +90,17 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#camelcased">
             🐫 camelCased properties
           </a>
         </li>
-        <li class="MenuTitle">Media Queries</li>
-        <li class="MenuTitle">Animations</li>
-        <li class="MenuTitle">Parse extensions and customizations</li>
+        <li class="MenuTitle">
+          <a href="#mediaq">
+            📟 Media queries
+          </a>
+        </li>
+        <li class="MenuTitle Disabled">🔜 Animations</li>
+        <li class="MenuTitle Disabled">🔜 Parse extensions and customizations</li>
       </ul>
     </div>
     <div class="DocumentationContent">
@@ -446,6 +450,124 @@ gridTemplate: {
       </div>
       <div class="DocumentationPart" id="camelcased">
         <h2>camelCased properties</h2>
+        <span>In JSSheet you can use any kind of css property by <i>double quotes</i> wrap, but some of them are
+          converted in camelCased format to simplify the
+          sheet definition and to prevent <b>lint</b> errors on JSON objects.</span>
+        <hr>
+        <h3>camelCased properties</h3>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>CSS relative code</th>
+          </tr>
+          <tr>
+            <td><b>fontFamily</b></td>
+            <td>font-family</td>
+          </tr>
+          <tr>
+            <td><b>fontSize</b></td>
+            <td>font-size</td>
+          </tr>
+          <tr>
+            <td><b>fontWeight</b></td>
+            <td>font-weight</td>
+          </tr>
+          <tr>
+            <td><b>overflowX</b></td>
+            <td>overflow-x</td>
+          </tr>
+          <tr>
+            <td><b>overflowY</b></td>
+            <td>overflow-y</td>
+          </tr>
+          <tr>
+            <td><b>zIndex</b></td>
+            <td>z-index</td>
+          </tr>
+          <tr>
+            <td><b>boxShadow</b></td>
+            <td>box-shadow</td>
+          </tr>
+          <tr>
+            <td><b>textShadow</b></td>
+            <td>text-shadow</td>
+          </tr>
+          <tr>
+            <td><b>whiteSpace</b></td>
+            <td>white-space</td>
+          </tr>
+          <tr>
+            <td><b>borderBottom</b></td>
+            <td>border-bottom</td>
+          </tr>
+          <tr>
+            <td><b>borderTop</b></td>
+            <td>border-top</td>
+          </tr>
+          <tr>
+            <td><b>borderLeft</b></td>
+            <td>border-left</td>
+          </tr>
+          <tr>
+            <td><b>borderRight</b></td>
+            <td>border-right</td>
+          </tr>
+          <tr>
+            <td><b>letterSpacing</b></td>
+            <td>letter-spacing</td>
+          </tr>
+          <tr>
+            <td><b>maxWidth</b></td>
+            <td>max-width</td>
+          </tr>
+          <tr>
+            <td><b>maxHeight</b></td>
+            <td>max-height</td>
+          </tr>
+          <tr>
+            <td><b>textAlign</b></td>
+            <td>text-align</td>
+          </tr>
+          <tr>
+            <td><b>textTransform</b></td>
+            <td>text-transform</td>
+          </tr>
+          <tr>
+            <td><b>backgroundColor</b></td>
+            <td>background-color</td>
+          </tr>
+          <tr>
+            <td><b>textDecoration</b></td>
+            <td>text-decoration</td>
+          </tr>
+        </table>
+        <hr>
+        <span>Note: each of this properties could be defined with the classic syntax, e.g
+          <i>"text-decoration"</i></span>
+      </div>
+      <div class="DocumentationPart" id="mediaq">
+        <h2>Media queries management</h2>
+        <span>In JSSheet you can handle also different styles according to classic css media queries.</span>
+        <hr>
+        <h3>The mediaQueries property</h3>
+        <span>The <i>mediaQueries</i> property is related to a single component, you can define multiple mediaQueries
+          for the same component
+          and its children:</span>
+        <code>
+          <pre>
+{
+  selector: '.MyElement',
+  ...myElementProps
+  <i>mediaQueries</i>: [
+    {
+      selector: <i>'only screen and (max-width: 700px)'</i>,
+      ...myElementPropsOnMobile
+    }
+  ]
+}</pre>
+        </code>
+        <span>The <i>selector</i> property defines the media query for the component, after that you can set any kind of
+          property, also the <i>children</i> property to handle components children layout.</span>
       </div>
     </div>
   </div>

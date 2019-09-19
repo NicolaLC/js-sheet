@@ -29,9 +29,9 @@ const documentation = {
 						},
 						{
 							selector: '.MenuTitle',
-							opacity: .5,
 							fontSize: fonts.sizes.small,
 							margin: '1rem 0',
+							color: colors.tertiary,
 							children: [
 								{
 									selector: ':before',
@@ -42,6 +42,11 @@ const documentation = {
 									height: '.1rem',
 									content: ' ',
 									background: colors.secondary
+								},
+								{
+									selector: '&.Disabled',
+									cursor: 'not-allowed',
+									opacity: .3
 								}
 							]
 						}

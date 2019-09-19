@@ -99,9 +99,6 @@ function parseProperties(properties, selector, parentSelector) {
 			case "fontWeight":
 				result += `font-weight:${properties[prop]};`;
 				break;
-			case "fontFamily":
-				result += `font-family:${properties[prop]};`;
-				break;
 			case "zIndex":
 				result += `z-index:${properties[prop]};`;
 				break;
