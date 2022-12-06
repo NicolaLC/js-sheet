@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "easy-livereload": "^1.3.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "figlet": "^1.2.3",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
